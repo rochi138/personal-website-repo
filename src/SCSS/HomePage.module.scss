@@ -1,0 +1,96 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.75;
+    position: relative;
+
+    .displayMiddle{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			whiteSpace: nowrap;
+
+		.name{
+			text-align:center;
+			padding:12px 24px;
+			color:#ffffff;
+			background-color:#000000;
+			font-size:24px;
+			letter-spacing:10px;
+		}
+
+		.sectionName{
+			text-align:center;
+			padding:12px 24px;
+			color:#ffffff;
+			font-size:24px;
+			letter-spacing:5px;
+		}
+	}
+}
+
+.bannerPic {
+	background-image: url("../images/robynHeader.jpg");
+    min-height: 100vh;
+}
+
+.projectsPic {
+	background-image: url("../images/robynInterests.jpg");
+}
+
+.contactPic {
+	background-image: url("../images/robynContact.jpg");
+}
+
+.interestsPic {
+	background-image: url("../images/robynInterests.jpg");
+}
+
+.projectsPic, .contactPic, .interestsPic {
+	min-height: 400px;
+}
+
+.sectionContainer {
+	margin-left: auto;
+	margin-right: auto;
+	max-width:980px;
+	padding:0.01em 16px;
+	padding-top:64px;
+
+	&:before, &:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	h3 {
+		text-align: center;
+	}
+
+	.subTitle {
+		font-style: italic;
+		text-align: center;
+		margin-bottom: 12px;
+	}
+
+	@media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.interests {
+}
+
+.floatContainer {
+	&:after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+}

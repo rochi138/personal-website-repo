@@ -1,0 +1,80 @@
+{
+  "ProjectSummary": {
+  	"projectName": "robynching.me",
+  	"tagline": "It's time to meet my maker",
+  	"type": "Personal Project",
+  	"image": {
+	  	"src": "placeholder", 
+	  	"alt": "Website logo"
+		},
+		"summary": "This website was created because I&#39;m more than just a one page resume. I&#39;m also a website with a lot of links, images and text. <br /><br />The real reason is because my second co-op job was at <a href=\"https://www.peekapak.com/\">Peekapak</a> as a Frontend developere. The four months there made me reflect on some parts of myself and how I can use my time there to my greatest advantage.<br /><br />This site appeals to my personal beliefs and short-comings.<ul><li>I wanted to walk away with a tangible representation of the knowledge and skills I gained from this experience.</li><li>I often forget syntax and how to connect various parts of code together. This is a template of re-usable code for personal use.</li><li>I learn best by applying what I learned in a practical way. By creating a website on my own, from start to end I can understand the process of implementing JavaScript, SCSS and Bootstrap.</li></ul>Created to impress you."
+  },
+  "ProgressComponent": {
+  	"link": "https://github.com/rochi138/personal_website",
+  	"updateList": [
+      {
+        "date": "03/01/2018", 
+        "text": [
+          "ReactJS App hosted by GitHub",
+          "Draws information from JSON files"
+        ]
+      },
+	  	{
+	  		"date": "26/11/2018", 
+        "text": [
+          "Complete overhaul of website begins."
+        ]
+	  	},
+      {
+        "date": "07/05/2018", 
+        "text": [
+          "Site was created to apply attach to resumes.",
+          "Copied <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\">Parallex Template</a> from <a href=\"https://www.w3schools.com/\">W3Schools</a>.",
+          "Due to lack of experience in HTML, CSS and JavaScript, site was left in a half-finished, unpresentable state."
+        ]
+      }
+		]
+  },
+  "MeetTheTeamComponent": {
+    "memberList": [
+      { 
+      	"name": "Robyn Ching",
+        "text": [
+          "React.js",
+          "Bootstrap",
+          "SCSS",
+          "HTML",
+          "JavaScript",
+          "CSS"
+        ]
+      },
+      { 
+      	"name": "Amy Lu",
+        "text": [
+          "Art assets for the FowlPlay."
+        ]
+      },
+      { 
+        "name": "Others",
+        "text": [
+          "Every team member for the projects that have made it onto this site.",
+          "Validation of designs and text edits.",
+          "Copied <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\">Parallex Template</a> from <a href=\"https://www.w3schools.com/\">W3Schools</a>."
+        ]
+      },
+      { 
+      	"name": "<a href=\"https://www.w3schools.com/\">W3Schools</a>",
+        "text": [
+          "Site is based off of <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\">Parallex Template</a>.."
+        ]
+      }
+    ]
+  },
+  "KeyTakeawaysComponent": {
+    "takeawayList": [
+      "Basic knowledge of HTML, JavaScript and CSS.",
+      "Basic project and feature planning.",
+      "Understanding user-readability and experience."
+    ]
+  }
+}

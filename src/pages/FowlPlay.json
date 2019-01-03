@@ -1,0 +1,80 @@
+{
+  "ProjectSummary": {
+  	"projectName": "FowlPlay",
+  	"tagline": "Ready of the fowlout?",
+  	"type": "Personal Project",
+  	"image": {
+	  	"src": "fowlPlayThumbnail", 
+	  	"alt": "FowlPlay thumbnail"
+		},
+		"summary": "Fowl Play is a story driven puzzle-platforming game following the adventure of a goose named Benny and a young boy named Adrian. The puzzles are based upon the cooperation between Adrian and Benny, and their unique abilities. Adrian is considered the brains and hands as he is able to craft items, open doors and interact with various objects and tools. Benny contrasts Adrian with his advanced mobility, enabling him to squeeze into small spaces, jump great heights and retrieve objects for Adrian to use. Together these two journey through a dangerous world allowing their bond to flourish, growing together and coming to know each other as brothers.<br />Created for Game Jam.<br />Won FEELS? award."
+  },
+  "ProgressComponent": {
+  	"link": "https://github.com/rochi138/fowlplay",
+  	"updateList": [
+	  	{
+	  		"date": "20/10/2018", 
+        "text": [
+          "Plot is expanded and refined to allow more character growth.",
+          "Game mechanics are more fleshed out.",
+          "More challenges and level designs are created and are more complex."
+        ]
+	  	},
+      {
+        "date": "28/05/2018", 
+        "text": [
+          "Waterloo Game Jam.",
+          "General plot and game mechanics are planned.",
+          "More challenges and level designs are created and are more complex.",
+          "Game manager (includes camera manager), simple inventory manager and character scripts are coded and implemented.",
+          "Basic tutorial was created."
+        ]
+      }
+		]
+  },
+  "MeetTheTeamComponent": {
+    "memberList": [
+      { 
+      	"name": "Robyn Ching",
+        "text": [
+          "Created Game Manager.",
+          "Created Inventory Manager.",
+          "Edited character scripts; removed jumping (Adrian) and enabled flying (Benny)."
+        ]
+      },
+      { 
+        "name": "James French",
+        "text": [
+          "Wrote the music and created the sound effects for the game."
+        ]
+      },
+      { 
+      	"name": "Amy Lu",
+        "text": [
+          "Created the art assets."
+        ]
+      },
+      { 
+        "name": "Reese Martens",
+        "text": [
+          "Developed animations.",
+          "Provided adaptations to player movement (Benny)."
+        ]
+      },
+      { 
+      	"name": "Sabrina Yu",
+        "text": [
+          "Designed the levels for Fowl Play.",
+          "Orchestrated cutscenes."
+        ]
+      }
+    ]
+  },
+  "KeyTakeawaysComponent": {
+    "takeawayList": [
+      "Successful organization and delegation of all team members. Each member was productive and actively contributed towards the overall game quality.",
+      "Visual Studio BASIC syntax is nearly identical to C#.",
+      "Each member was completely fresh to Unity, but all were able to gain a basic understanding of Unity fundamentals."
+    ]
+  }
+}
