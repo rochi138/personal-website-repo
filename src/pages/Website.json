@@ -1,6 +1,6 @@
 {
   "ProjectSummary": {
-  	"projectName": "robynching.me",
+  	"projectName": "rochi138.github.io/personal-website",
   	"tagline": "It's time to meet my maker",
   	"type": "Personal Project",
   	"image": {
@@ -10,7 +10,7 @@
 		"summary": "This website was created because I&#39;m more than just a one page resume. I&#39;m also a website with a lot of links, images and text. <br /><br />The real reason is because my second co-op job was at <a href=\"https://www.peekapak.com/\">Peekapak</a> as a Frontend developere. The four months there made me reflect on some parts of myself and how I can use my time there to my greatest advantage.<br /><br />This site appeals to my personal beliefs and short-comings.<ul><li>I wanted to walk away with a tangible representation of the knowledge and skills I gained from this experience.</li><li>I often forget syntax and how to connect various parts of code together. This is a template of re-usable code for personal use.</li><li>I learn best by applying what I learned in a practical way. By creating a website on my own, from start to end I can understand the process of implementing JavaScript, SCSS and Bootstrap.</li></ul>Created to impress you."
   },
   "ProgressComponent": {
-  	"link": "https://github.com/rochi138/personal_website",
+  	"link": "https://github.com/rochi138/personal-website-repo",
   	"updateList": [
       {
         "date": "03/01/2018", 
