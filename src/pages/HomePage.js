@@ -116,45 +116,10 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Let me know and I'll get back to you!</div>
 
             <div class="w3-row w3-padding-32 w3-section" id="div-container">
-                  <div class="w3-large w3-margin-bottom w3-center">
+                  <div class="w3-large w3-margin-bottom w3-center" style={ { textAlign: "center" }}>
                     <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: rjching@uwaterloo.ca<br />
                   </div>
-                  <form action="/action_page.php" target="_blank" rel="noopener noreferrer">
-                    <div class="w3-row-padding" style={{margin: "0 -16px 8px -16px"}}>
-                      <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" />
-                      </div>
-                      <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email" />
-                      </div>
-                    </div>
-                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" />
-                    <button class="w3-button w3-black w3-right w3-section" type="submit">
-                      <i class="fa fa-paper-plane"></i> SEND MESSAGE
-                    </button>
-                  </form>
                 </div>
-          </div>
-          <div className={ `${ stylesHome.parallax } ${ stylesHome.interestsPic }` } >
-            <div className={ stylesHome.displayMiddle }>
-              <span className={ stylesHome.sectionName } >INTERESTS</span>
-            </div>
-          </div>
-          <div className={ stylesHome.sectionContainer} id="interests">
-            <h3>OUTSIDE OF OFFICE HOURS</h3>
-            <div className={ stylesHome.subTitle }>Conversation Starters <br />Things Nobody Asked For<br />Weak Flexes</div>
-            { source.interests.map( ( interest, i ) =>
-              <div className={ `${ stylesHome.interests } ${ stylesHome.floatContainer }` }> 
-                <img src={ require('../images/' + interest.image + '.jpg' ) } class="w3-round w3-image" alt={ interest.alt } style={{ width: "300px", height: "333px", objectFit: "contain", float: "left" }} />
-                { this.state.interestStates[ i ] ? 
-                  <div dangerouslySetInnerHTML={ { __html: interest.content } }/> :
-                  <div dangerouslySetInnerHTML={ { __html: interest.brief } }/>
-                }
-                <Button onClick={ () => this.readMoreInterests( i ) }>
-                  { this.state.interestStates[ i ] ? "Show Less" : "Read More"}
-                </Button>
-              </div>
-            ) }
           </div>
         </div>
       </MainLayout>
