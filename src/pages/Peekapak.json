@@ -1,0 +1,19 @@
+{
+  "ProjectSummary": {
+  	"projectName": "Peekapak Frontend",
+  	"tagline": "Let's get PAKing!",
+  	"type": "Frontend Co-op",
+  	"image": {
+	  	"src": "peekapak-logo", 
+	  	"alt": "Peekapak Logo"
+		},
+		"summary": "Peek"
+  },
+  "KeyTakeawaysComponent": {
+    "takeawayList": [
+      "Successful organization and delegation of all team members. Each member was productive and actively contributed towards the overall game quality.",
+      "Visual Studio BASIC syntax is nearly identical to C#.",
+      "Each member was completely fresh to Unity, but all were able to gain a basic understanding of Unity fundamentals."
+    ]
+  }
+}

@@ -68,7 +68,7 @@ export default class Home extends Component{
               <div dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
             </div>
             <Button className={ stylesHome.resumeButton } style={{textDecoration: "none"}}>
-              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black"}} href="https://github.com/rochi138/personal_website/src/documents/Robyn Ching - Resume 2018 Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
+              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black"}} href="https://github.com/rochi138/personal-website-repo/src/documents/Robyn Ching - Resume 2018 Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
             </Button>
           </div>
           <div className={ stylesHome.sectionContainer} id="whatissyde" style={{marginBottom: "3em"}}>
