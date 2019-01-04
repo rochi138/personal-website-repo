@@ -3,7 +3,7 @@ import { MainLayout } from '../components/MainLayout';
 import stylesHome from '../SCSS/HomePage.module.scss';
 import styles from '../SCSS/Main.module.scss';
 import { ProgressComponent } from '../components/PageComponents';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col } from 'reactstrap';
 import profilePic from '../images/robynProfile.JPG';
 
 export default class Home extends Component{
@@ -67,8 +67,8 @@ export default class Home extends Component{
               <img src={ profilePic } class="w3-round w3-image" alt="Profile" style={{ width: "300px", height: "333px", objectFit: "contain", float: "left" }} />
               <div dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
             </div>
-            <Button className={ stylesHome.resumeButton } style={{textDecoration: "none"}}>
-              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black"}} href="https://github.com/rochi138/personal-website-repo/src/documents/Robyn Ching - Resume 2018 Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
+            <Button className={ stylesHome.resumeButton } style={{ backgroundColor: "#ccc", border: "none" }}>
+              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
             </Button>
           </div>
           <div className={ stylesHome.sectionContainer} id="whatissyde" style={{marginBottom: "3em"}}>
@@ -78,7 +78,7 @@ export default class Home extends Component{
             { this.state.showSYDE &&
               <div dangerouslySetInnerHTML={ { __html: source.SYDE.text } }/>
             }
-            <Button onClick={ () => this.readMore("SYDE") }>
+            <Button onClick={ () => this.readMore("SYDE") } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
               { this.state.showSYDE ? "Show Less" : "Read More"}
             </Button>
             </div>
