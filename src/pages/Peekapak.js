@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
-import { ProjectSummary, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
+import { ProjectSummary, SlideshowComponent, KeyTakeawaysComponent } from '../components/PageComponents';
 
 export default class Peekapak extends Component{
-  constructor( props ) {
+  constructor(props) {
     super();
   }
 
@@ -19,11 +19,14 @@ export default class Peekapak extends Component{
           <ProjectSummary
             source={ pageMeta.ProjectSummary }
           />
+          <SlideshowComponent
+            source={ pageMeta.Slideshow }
+          />
           <KeyTakeawaysComponent
             source={ pageMeta.KeyTakeawaysComponent }
           />
         </div>
       </MainLayout>
-      );
+    );
   }
 }
