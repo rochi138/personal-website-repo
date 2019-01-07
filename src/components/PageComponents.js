@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../SCSS/Main.module.scss';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Modal, ModalHeader, ModalBody } from'reactstrap';
 
 export class ProjectSummary extends Component {
 	render() {
@@ -15,6 +15,52 @@ export class ProjectSummary extends Component {
 			</div>
 		)
 	}
+}
+
+export class SlideshowComponent extends Component {
+	constructor(props) {
+    super(props);
+
+    var modalStates = [];
+    this.props.source.forEach(function(element) {
+      modalStates.push( false );
+    });
+
+    this.state={
+      source: this.props.source,
+      modalStates: modalStates
+    }
+  }
+
+  toggleModal( key ) {
+    var modalStates = this.state.modalStates;
+    modalStates[ key ] = !this.state.modalStates[ key ];
+    this.setState({
+      modalStates: modalStates
+    });
+  }
+
+  render(){
+  	const source = this.props.source;
+    return(
+	    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
+		    <div style={{display: "flex", flexDirection: "row"}}>
+          { source.map( ( image, i ) =>
+            <Col md='2' key={ i } onClick={ () => this.toggleModal( i ) }>
+              <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
+              <Modal isOpen={ this.state.modalStates[ i ] } toggle={ () => this.toggleModal( i ) } size="lg">
+                <ModalHeader toggle={ () => this.toggleModal( i ) }>{ image.title }</ModalHeader>
+                <ModalBody>
+                  <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
+                  <div dangerouslySetInnerHTML={ { __html: image.description } } />
+                </ModalBody>
+              </Modal>
+            </Col>
+          ) }
+        </div>
+	    </div>
+    )
+  }
 }
 
 export class ProgressComponent extends Component {
@@ -56,7 +102,6 @@ export class ProgressComponent extends Component {
 export class MeetTheTeamComponent extends Component {
   render(){
   	const source = this.props.source;
-  	console.log(source.memberList[ 0 ].text);
     return(
     <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
 	    <div className={ styles.meetTheTeamComponent }>

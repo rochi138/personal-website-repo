@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
 import stylesHome from '../SCSS/HomePage.module.scss';
-import styles from '../SCSS/Main.module.scss';
-import { ProgressComponent } from '../components/PageComponents';
 import { Button, Row, Col } from 'reactstrap';
-import profilePic from '../images/robynProfile.JPG';
 
 export default class Home extends Component{
   constructor( props ) {
@@ -64,7 +61,7 @@ export default class Home extends Component{
             <h3>ABOUT ME</h3>
             <div className={ stylesHome.subTitle }>Candidate for Systems Design Engineering Class 2022</div>
             <div className={ stylesHome.floatContainer }>
-              <img src={ profilePic } class="w3-round w3-image" alt="Profile" style={{ width: "300px", height: "333px", objectFit: "contain", float: "left" }} />
+              <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" style={{ width: "300px", height: "333px", objectFit: "contain", float: "left" }} />
               <div dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
             </div>
             <Button className={ stylesHome.resumeButton } style={{ backgroundColor: "#ccc", border: "none" }}>

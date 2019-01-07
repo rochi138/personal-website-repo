@@ -16,7 +16,6 @@ class App extends Component {
         <Route path='/HireMePwease' component={ HireMePwease } />
         <Route path='/Website' component={ Website } />
         <Route path='/FowlPlay' component={ FowlPlay } />
-        <Route path='/Peekapak' component={ Peekapak } />
       </div>
     );
   }
