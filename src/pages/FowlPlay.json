@@ -9,6 +9,16 @@
 		},
 		"summary": "Fowl Play is a story driven puzzle-platforming game following the adventure of a goose named Benny and a young boy named Adrian. The puzzles are based upon the cooperation between Adrian and Benny, and their unique abilities. Adrian is considered the brains and hands as he is able to craft items, open doors and interact with various objects and tools. Benny contrasts Adrian with his advanced mobility, enabling him to squeeze into small spaces, jump great heights and retrieve objects for Adrian to use. Together these two journey through a dangerous world allowing their bond to flourish, growing together and coming to know each other as brothers.<br />Created for Game Jam.<br />Won FEELS? award."
   },
+  "Slideshow": [
+    {
+      "image": {
+        "src": "fowlPlayBanner", 
+        "alt": "FowlPlay Banner"
+      },
+      "title": "FowlPlay Banner",
+      "description": "Banner and opening scene of Fowl Play. Benny (goosling) is standing next to the fissure."
+    }
+  ],
   "ProgressComponent": {
   	"link": "https://github.com/rochi138/fowlplay",
   	"updateList": [
