@@ -7,14 +7,21 @@ export default class Home extends Component{
   constructor( props ) {
     super();
 
-    const source=require('./HomePage.json');
+    var source=require('./HomePage.json');
     var interestStates = [];
     source.interests.forEach(function(element) {
       interestStates.push( false );
     });
 
+    if ( source.projects.length > 6 ) {
+      source.projectsMore= source.projects.slice( 6, source.projects.length );
+      source.projects= source.projects.slice( 0, 6 );
+    }
+    console.log(source);
+
     this.state={
       source: source,
+      showProjects: false,
       showSYDE: false,
       interestStates: interestStates
     }
@@ -102,6 +109,29 @@ export default class Home extends Component{
                 </Col>
               ) }
             </Row>
+            { source.projectsMore && 
+              <div>
+                <Button onClick={ () => this.readMore("Projects") } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
+                  { this.state.showProjects ? "Show Less" : "Load More"}
+                </Button>
+                { this.state.showProjects && 
+                  <Row>
+                    { source.projectsMore.map( ( project, i ) =>
+                      <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
+                        <div style={{height: "16em"}} >
+                          <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
+                          <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
+                        </div>
+                        <div style={{height: "5em"}} >
+                          <h4>{ project.name }</h4>
+                          <p>{ project.description }</p>
+                        </div>
+                      </Col>
+                    ) }
+                  </Row>
+                }
+              </div>
+            }
           </div>
           <div className={ `${ stylesHome.parallax } ${ stylesHome.contactPic }` }>
             <div className={ stylesHome.displayMiddle }>
