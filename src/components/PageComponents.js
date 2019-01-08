@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../SCSS/Main.module.scss';
-import { Row, Col, Modal, ModalHeader, ModalBody } from'reactstrap';
+import { Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from'reactstrap';
 
 export class ProjectSummary extends Component {
 	render() {
@@ -44,16 +44,24 @@ export class SlideshowComponent extends Component {
   	const source = this.props.source;
     return(
 	    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-		    <div style={{display: "flex", flexDirection: "row"}}>
+		    <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
           { source.map( ( image, i ) =>
-            <Col md='2' key={ i } onClick={ () => this.toggleModal( i ) }>
-              <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
+            <Col key={ i } onClick={ () => this.toggleModal( i ) } style={{ textAlign: "center" }}>
+              <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%", maxWidth: "300px", minWidth: "100px"}} alt={ image.image.alt }/>
               <Modal isOpen={ this.state.modalStates[ i ] } toggle={ () => this.toggleModal( i ) } size="lg">
                 <ModalHeader toggle={ () => this.toggleModal( i ) }>{ image.title }</ModalHeader>
                 <ModalBody>
                   <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
                   <div dangerouslySetInnerHTML={ { __html: image.description } } />
                 </ModalBody>
+                <ModalFooter>
+                	{ i != 0 && 
+                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i - 1) }}>Previous</Button>
+                	}
+                	{ i != source.length - 1 && 
+                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i + 1) }}>Next</Button>
+                	}
+                </ModalFooter>
               </Modal>
             </Col>
           ) }
