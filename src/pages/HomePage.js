@@ -98,11 +98,11 @@ export default class Home extends Component{
             <Row>
               { source.projects.map( ( project, i ) =>
                 <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
-                  <div style={{height: "16em"}} >
+                  <div style={{height: "16em", width: "100%", textAlign: "center"}} >
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
                     <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
                   </div>
-                  <div style={{height: "5em"}} >
+                  <div style={{height: "5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
                     <h4>{ project.name }</h4>
                     <p>{ project.description }</p>
                   </div>

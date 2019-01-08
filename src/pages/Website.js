@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
-import { ProjectSummary, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
+import { ProjectSummary, SlideshowComponent, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
 
 export default class Website extends Component{
   constructor( props ) {
@@ -20,6 +20,9 @@ export default class Website extends Component{
         <div style={{ width: "80vw", margin: "auto", paddingRight: "8em", paddingLeft: "8em" }}>
           <ProjectSummary
             source={ pageMeta.ProjectSummary }
+          />
+          <SlideshowComponent
+            source={ pageMeta.Slideshow }
           />
           <ProgressComponent
             source={ pageMeta.ProgressComponent }
