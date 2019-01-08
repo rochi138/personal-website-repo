@@ -78,14 +78,12 @@ export default class Home extends Component{
           <div className={ stylesHome.sectionContainer} id="whatissyde" style={{marginBottom: "3em"}}>
             <h3>WHAT IS SYSTEMS DESIGN ENGINEERING?</h3>
             <div className={ stylesHome.subTitle }>Systems is how we know the world. Design is how we change it.</div>
-            <div class="w3-row-padding">
             { this.state.showSYDE &&
               <div dangerouslySetInnerHTML={ { __html: source.SYDE.text } }/>
             }
             <Button onClick={ () => this.readMore("SYDE") } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
               { this.state.showSYDE ? "Show Less" : "Read More"}
             </Button>
-            </div>
           </div>
           <div className={ `${ stylesHome.parallax } ${ stylesHome.projectsPic }` } >
             <div className={ stylesHome.displayMiddle }>
