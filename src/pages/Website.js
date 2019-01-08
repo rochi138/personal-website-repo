@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
-import { ProjectSummary, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
+import { ProjectSummary, SlideshowComponent, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
 
 export default class Website extends Component{
   constructor( props ) {
@@ -21,6 +21,9 @@ export default class Website extends Component{
           <ProjectSummary
             source={ pageMeta.ProjectSummary }
           />
+          <SlideshowComponent
+            source={ pageMeta.Slideshow }
+          />
           <ProgressComponent
             source={ pageMeta.ProgressComponent }
           />
@@ -35,23 +38,17 @@ export default class Website extends Component{
             <p><ul>
                     <li>HTML
                     <ul>
-                            <li>Read More ability to interests (table at first, then floating image and text)</li>
-                            <li>Project Load More button</li>
                             <li>Spinner</li>
+                            <li>Default fonts</li>
+                            <li>Font Awesome Icons</li>
                     </ul>
                     </li>
                     <li>Enable e-mailing ability</li>
                     <li>Templating
                     <ul>
-                            <li>BootStrap/CSS pages&nbsp;</li>
                             <li>Template project pages</li>
-                            <li>SCSS</li>
+                            <li>Dark mode</li>
                     </ul>
-                    </li>
-                    <li>JSON storage
-                    <ul>
-                            <li>take-in information from JSON</li>
-                     </ul>
                     </li>
                     <li>JSON Editor
                     <ul>
@@ -67,7 +64,6 @@ export default class Website extends Component{
                     <li>Draws all files and sorts them by latest update date. Displays them in that order.</li>
                     <li>Mobile
                     <ul>
-                            <li>Read More ability to SYDE explanation</li>
                             <li>Reformat all tables</li>
                     </ul>
                     </li>
