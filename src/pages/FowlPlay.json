@@ -17,6 +17,22 @@
       },
       "title": "FowlPlay Banner",
       "description": "Banner and opening scene of Fowl Play. Benny (goosling) is standing next to the fissure."
+    },
+    {
+      "image": {
+        "src": "screenshot-fowlPlay-adrian-benny", 
+        "alt": "Adrian and Benn Screenshot"
+      },
+      "title": "Adrian and Benny",
+      "description": "Adrian (boy) and Benny (goosling) standing before Adrian's cryogenic freezing chamber."
+    },
+    {
+      "image": {
+        "src": "screenshot-fowlPlay-keycard", 
+        "alt": "Benny gets keycard"
+      },
+      "title": "Benny Gets the Keycard",
+      "description": "Benny flies up to the shelf to grab a keycard to open the door."
     }
   ],
   "ProgressComponent": {
