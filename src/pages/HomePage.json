@@ -25,8 +25,8 @@
   		"description": "2D Platform Game"
   	},
   	{ "link": "Website",
-  		"image": "placeholder",
-  		"alt": "placeholder",
+  		"image": "react-js",
+  		"alt": "React JS Logo",
   		"name": "personal-website-repo",
   		"description": "Personal Website"
   	}
@@ -34,13 +34,23 @@
   "interests": [
   	{ "image": "placeholder",
   		"alt": "placeholder",
-  		"content": "<p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-  			"brief": "This is brief"
+  		"content": "<p>I actually learned to knit when I was quite young, but I recently picked it up again. My main motivation was because if I knitted while watching anime it did not feel like time wasted, since I highly value efficiency and time management. Alongside knitting, I also picked up rug hooking and crochetting.<br /><br />Working on these projects have made 60+ minute commutes more bearable... And they are really cheap gifts.</p>",
+  		"brief": "Knitting"
   	},
-  	{ "image": "placeholder",
-  		"alt": "placeholder",
-  		"content": "<p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Welcome to my website. I am lorem i</p>",
-  		"brief": "This is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is briefThis is brief"
-  	}
+  	{ "image": "golden-kamuy-scarf",
+  		"alt": "Golden Kamuy",
+  		"content": "<p>I enjoy reading manga and comics in general, no matter the genre.<br />All time favourites are Fullmetal Alchemist (Brotherhood, of course) and Golden Kamuy.</p>",
+  		"brief": "Anime"
+  	},
+    { "image": "games-d20",
+      "alt": "D20",
+      "content": "<p>Be it board games, card games or video games, I enjoy playing a variety of different games. I prefer board games, but I find it interesting to break down video game mechanics, especially since I am also interested in game development. In addition to playing, I often watch Let's Plays for games I can't afford or am too unskilled to play.<br /><br />Recently played:<ul><li>Exploding Kittens</li><li>Catan</li><li>Dungeons and Dragons</li><li>WILL: A Wonderful World</li></ul></p>",
+      "brief": "Games"
+    },
+    { "image": "placeholder",
+      "alt": "Reading",
+      "content": "<p>With 60+ minute commutes during co-op, I pass the time with knitting and reading a lot of novels. Books are a great way to gain an understanding of different times and siutations within history or simply learning to appreciate a person's story.<br /><br />Some recent reads are:<ul><li>First They Killed My Father</li><li>Sons and Soldiers</li><li>Woman in the Window</li><li>When Breath Becomes Air</li></ul></p>",
+      "brief": "Reading"
+    }
   ]
 }

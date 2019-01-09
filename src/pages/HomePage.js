@@ -17,7 +17,6 @@ export default class Home extends Component{
       source.projectsMore= source.projects.slice( 6, source.projects.length );
       source.projects= source.projects.slice( 0, 6 );
     }
-    console.log(source);
 
     this.state={
       source: source,
@@ -75,7 +74,7 @@ export default class Home extends Component{
               <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
             </Button>
           </div>
-          <div className={ stylesHome.sectionContainer} id="whatissyde" style={{marginBottom: "3em"}}>
+          <div className={ stylesHome.sectionContainer} id="whatissyde" style={{paddingTop: "0"}}>
             <h3>WHAT IS SYSTEMS DESIGN ENGINEERING?</h3>
             <div className={ stylesHome.subTitle }>Systems is how we know the world. Design is how we change it.</div>
             { this.state.showSYDE &&
@@ -106,29 +105,23 @@ export default class Home extends Component{
                   </div>
                 </Col>
               ) }
+              { ( this.state.showProjects && source.projectsMore ) && source.projectsMore.map( ( project, i ) =>
+                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
+                  <div style={{height: "16em", width: "100%", textAlign: "center"}} >
+                    <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
+                    <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
+                  </div>
+                  <div style={{height: "5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
+                    <h4>{ project.name }</h4>
+                    <p>{ project.description }</p>
+                  </div>
+                </Col>
+              ) }
             </Row>
             { source.projectsMore && 
-              <div>
-                <Button onClick={ () => this.readMore("Projects") } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
-                  { this.state.showProjects ? "Show Less" : "Load More"}
-                </Button>
-                { this.state.showProjects && 
-                  <Row>
-                    { source.projectsMore.map( ( project, i ) =>
-                      <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
-                        <div style={{height: "16em"}} >
-                          <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
-                          <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
-                        </div>
-                        <div style={{height: "5em"}} >
-                          <h4>{ project.name }</h4>
-                          <p>{ project.description }</p>
-                        </div>
-                      </Col>
-                    ) }
-                  </Row>
-                }
-              </div>
+              <Button onClick={ () => this.readMore("Projects") } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
+                { this.state.showProjects ? "Show Less" : "Load More"}
+              </Button>
             }
           </div>
           <div className={ `${ stylesHome.parallax } ${ stylesHome.contactPic }` }>
@@ -141,10 +134,44 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Let me know and I'll get back to you!</div>
 
             <div class="w3-row w3-padding-32 w3-section" id="div-container">
-                  <div class="w3-large w3-margin-bottom w3-center" style={ { textAlign: "center" }}>
-                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: rjching@uwaterloo.ca<br />
-                  </div>
-                </div>
+              <div class="w3-large w3-margin-bottom w3-center" style={ { textAlign: "center" }}>
+                <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: rjching@uwaterloo.ca<br />
+              </div>
+            </div>
+          </div>
+          <div className={ `${ stylesHome.parallax } ${ stylesHome.interestsPic }` }>
+            <div className={ stylesHome.displayMiddle }>
+              <span className={ stylesHome.sectionName } >INTERESTS</span>
+            </div>
+          </div>
+          <div className={ stylesHome.sectionContainer} id="interests">
+            <h3>OUTSIDE OF OFFICE HOURS</h3>
+            <div className={ stylesHome.subTitle }>Conversation Starters <br />Things Nobody Asked For<br />Weak Flexes</div>
+            <Row>
+              { source.interests.map( ( interest, i ) =>
+                <Col md={ this.state.interestStates[ i ] ? 12: 3 } sm={ this.state.interestStates[ i ] ? 12: 4 } xs={ this.state.interestStates[ i ] ? 12: 6 } style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    { this.state.interestStates[ i ] ?
+                      <div className={ `${ stylesHome.interests } ${ stylesHome.floatContainer }` }> 
+                        <img src={ require('../images/' + interest.image + '.jpg' ) } class="w3-round w3-image" alt={ interest.alt } style={{ width: "200px", height: "auto", objectFit: "contain", float: "left", padding: "1em" }} />
+                        <h4>{ interest.brief }</h4>
+                        <div dangerouslySetInnerHTML={ { __html: interest.content } }/>
+                      </div> :
+                      <div>
+                        <div style={{height: "10em", width: "100%", textAlign: "center"}} >
+                          <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
+                          <img src={ require('../images/' + interest.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ interest.alt } />
+                        </div>
+                        <div style={{height: "2.5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
+                          <h4>{ interest.brief }</h4>
+                        </div>
+                      </div>
+                    }
+                  <Button onClick={ () => this.readMoreInterests( i ) }>
+                    { this.state.interestStates[ i ] ? "Show Less" : "Read More"}
+                  </Button>
+                </Col>
+              ) }
+            </Row>
           </div>
         </div>
       </MainLayout>
