@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "adb5c45a1c802d6ec0486ea3900e4bc0",
-    "url": "/personal-website-repo/static/media/PublisherSubunit.adb5c45a.jpg"
+    "revision": "c48cb5d395de54fdcdd7730a6c13609e",
+    "url": "/personal-website-repo/static/media/ed-sheeran.c48cb5d3.jpg"
   },
   {
-    "revision": "15238d85d0d5baec1e81",
-    "url": "/personal-website-repo/static/css/main.bc71a8f6.chunk.css"
+    "revision": "2158040b8ad82d741e01",
+    "url": "/personal-website-repo/static/css/main.352ce1c9.chunk.css"
   },
   {
     "revision": "78f4b1743be5809de11a3514742842d0",
     "url": "/personal-website-repo/static/media/screenshot-website-json.78f4b174.jpg"
   },
   {
-    "revision": "57e9ac8eb73a8d977ce4",
-    "url": "/personal-website-repo/static/js/1.57e9ac8e.chunk.js"
+    "revision": "8b36653b756ca2ca2069",
+    "url": "/personal-website-repo/static/js/1.8b36653b.chunk.js"
   },
   {
     "revision": "831399e47b98b43e8ac4",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/fowlPlayBanner.53e40081.jpg"
   },
   {
-    "revision": "3e07913462eaa627cee8bb9370209bba",
-    "url": "/personal-website-repo/static/media/robynHeader.3e079134.jpg"
-  },
-  {
     "revision": "fe31a14070c301ba656ebf709029e191",
     "url": "/personal-website-repo/static/media/robynContact.fe31a140.jpg"
+  },
+  {
+    "revision": "3e07913462eaa627cee8bb9370209bba",
+    "url": "/personal-website-repo/static/media/robynHeader.3e079134.jpg"
   },
   {
     "revision": "863da0ee77c95c38d5627146cf75a5af",
@@ -52,8 +52,16 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/PublisherStandards.b882d1a7.jpg"
   },
   {
-    "revision": "15238d85d0d5baec1e81",
-    "url": "/personal-website-repo/static/js/main.15238d85.chunk.js"
+    "revision": "adb5c45a1c802d6ec0486ea3900e4bc0",
+    "url": "/personal-website-repo/static/media/PublisherSubunit.adb5c45a.jpg"
+  },
+  {
+    "revision": "2158040b8ad82d741e01",
+    "url": "/personal-website-repo/static/js/main.2158040b.chunk.js"
+  },
+  {
+    "revision": "e1a4d4ac65f07403ba5781b206c0adef",
+    "url": "/personal-website-repo/static/media/fowlPlay-awards-feels.e1a4d4ac.jpg"
   },
   {
     "revision": "bb211f66f4b6f2ba12086b51c93f75ef",
@@ -96,11 +104,11 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/screenshot-website-js.017ce07f.jpg"
   },
   {
-    "revision": "57e9ac8eb73a8d977ce4",
-    "url": "/personal-website-repo/static/css/1.2f23eae0.chunk.css"
+    "revision": "8b36653b756ca2ca2069",
+    "url": "/personal-website-repo/static/css/1.43b42424.chunk.css"
   },
   {
-    "revision": "2917de123ed1dd5ad2aab02f0611d075",
+    "revision": "a50c914b1beab1ea1bdd7b6a2e1c2cd4",
     "url": "/personal-website-repo/index.html"
   }
 ];
