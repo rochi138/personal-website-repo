@@ -68,6 +68,12 @@
 	}
 }
 
+.awardsComponent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .progressComponent {
 	overflow: hidden;
 

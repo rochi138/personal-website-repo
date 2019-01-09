@@ -17,6 +17,21 @@ export class ProjectSummary extends Component {
 	}
 }
 
+export class AwardsComponent extends Component {
+	render() {
+		const source = this.props.source;
+		return (
+			<div className={ styles.awardsComponent }>
+				<img src={ require('../images/' + source.image.src + '.jpg' ) } class="w3-round w3-image" alt={ source.image.alt } style={{objectFit: "contain", width:"15em", height:"15em" }} />
+				<h4>{ source.header }</h4>
+				{ source.caption && 
+					<div style={{ textAlign: "center" }} dangerouslySetInnerHTML={ { __html: source.caption } } />
+				}
+			</div>
+		)
+	}
+}
+
 export class SlideshowComponent extends Component {
 	constructor(props) {
     super(props);
@@ -152,7 +167,7 @@ export class KeyTakeawaysComponent extends Component {
 		        </div></h2>
 		        <ul>
 				    { source.takeawayList.map( ( takeaway, i ) =>
-			        <li dangerouslySetInnerHTML={ { __html: takeaway } } />
+			        <li key={ i } dangerouslySetInnerHTML={ { __html: takeaway } } />
 			     	) }
 		     	</ul>
 		    </div>

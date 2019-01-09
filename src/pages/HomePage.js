@@ -149,7 +149,7 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Conversation Starters <br />Things Nobody Asked For<br />Weak Flexes</div>
             <Row>
               { source.interests.map( ( interest, i ) =>
-                <Col md={ this.state.interestStates[ i ] ? 12: 3 } sm={ this.state.interestStates[ i ] ? 12: 4 } xs={ this.state.interestStates[ i ] ? 12: 6 } style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <Col md={ this.state.interestStates[ i ] ? 12: 3 } sm={ this.state.interestStates[ i ] ? 12: 4 } xs={ this.state.interestStates[ i ] ? 12: 6 } key={ i } style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     { this.state.interestStates[ i ] ?
                       <div className={ `${ stylesHome.interests } ${ stylesHome.floatContainer }` }> 
                         <img src={ require('../images/' + interest.image + '.jpg' ) } class="w3-round w3-image" alt={ interest.alt } style={{ width: "200px", height: "auto", objectFit: "contain", float: "left", padding: "1em" }} />
