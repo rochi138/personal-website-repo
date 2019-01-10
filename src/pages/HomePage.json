@@ -32,8 +32,8 @@
   	}
   ],
   "interests": [
-  	{ "image": "placeholder",
-  		"alt": "placeholder",
+  	{ "image": "knitting",
+  		"alt": "Knitted Golden Kamuy Scarf",
   		"content": "<p>I actually learned to knit when I was quite young, but I recently picked it up again. My main motivation was because if I knitted while watching anime it did not feel like time wasted, since I highly value efficiency and time management. Alongside knitting, I also picked up rug hooking and crochetting.<br /><br />Working on these projects have made 60+ minute commutes more bearable... And they are really cheap gifts.</p>",
   		"brief": "Knitting"
   	},
@@ -47,8 +47,8 @@
       "content": "<p>Be it board games, card games or video games, I enjoy playing a variety of different games. I prefer board games, but I find it interesting to break down video game mechanics, especially since I am also interested in game development. In addition to playing, I often watch Let's Plays for games I can't afford or am too unskilled to play.<br /><br />Recently played:<ul><li>Exploding Kittens</li><li>Catan</li><li>Dungeons and Dragons</li><li>WILL: A Wonderful World</li></ul></p>",
       "brief": "Games"
     },
-    { "image": "placeholder",
-      "alt": "Reading",
+    { "image": "reading",
+      "alt": "Harry Potter Glasses",
       "content": "<p>With 60+ minute commutes during co-op, I pass the time with knitting and reading a lot of novels. Books are a great way to gain an understanding of different times and siutations within history or simply learning to appreciate a person's story.<br /><br />Some recent reads are:<ul><li>First They Killed My Father</li><li>Sons and Soldiers</li><li>Woman in the Window</li><li>When Breath Becomes Air</li></ul></p>",
       "brief": "Reading"
     }

@@ -8,10 +8,6 @@ export default class Home extends Component{
     super();
 
     var source=require('./HomePage.json');
-    var interestStates = [];
-    source.interests.forEach(function(element) {
-      interestStates.push( false );
-    });
 
     if ( source.projects.length > 6 ) {
       source.projectsMore= source.projects.slice( 6, source.projects.length );
@@ -22,11 +18,10 @@ export default class Home extends Component{
       source: source,
       showProjects: false,
       showSYDE: false,
-      interestStates: interestStates
+      showInterest: 0,
     }
 
     this.readMore = this.readMore.bind( this );
-    this.readMoreInterests = this.readMoreInterests.bind( this );
   }
 
   componentDidMount() {
@@ -39,16 +34,9 @@ export default class Home extends Component{
     }));
   }
 
-  readMoreInterests( key ) {
-    var interestStates = this.state.interestStates;
-    interestStates[ key ] = !this.state.interestStates[ key ];
-    this.setState({
-      interestStates: interestStates
-    });
-  }
-
   render(){
     var source = this.state.source;
+    var openInterest = source.interests[ this.state.showInterest ];
 
     //component ids can be set with variables
     const example = "about";
@@ -67,7 +55,7 @@ export default class Home extends Component{
             <h3>ABOUT ME</h3>
             <div className={ stylesHome.subTitle }>Candidate for Systems Design Engineering Class 2022</div>
             <div className={ stylesHome.floatContainer }>
-              <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" style={{ width: "300px", height: "333px", objectFit: "contain", float: "left" }} />
+              <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" style={{ width: "40vw", height: "333px", objectFit: "contain", float: "left", maxWidth: "300px", padding: "5px" }} />
               <div dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
             </div>
             <Button className={ stylesHome.resumeButton } style={{ backgroundColor: "#ccc", border: "none" }}>
@@ -147,34 +135,28 @@ export default class Home extends Component{
           <div className={ stylesHome.sectionContainer} id="interests">
             <h3>OUTSIDE OF OFFICE HOURS</h3>
             <div className={ stylesHome.subTitle }>Conversation Starters <br />Things Nobody Asked For<br />Weak Flexes</div>
-            <Row>
-              { source.interests.map( ( interest, i ) =>
-                <Col md={ this.state.interestStates[ i ] ? 12: 3 } sm={ this.state.interestStates[ i ] ? 12: 4 } xs={ this.state.interestStates[ i ] ? 12: 6 } key={ i } style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    { this.state.interestStates[ i ] ?
-                      <div className={ `${ stylesHome.interests } ${ stylesHome.floatContainer }` }> 
-                        <img src={ require('../images/' + interest.image + '.jpg' ) } class="w3-round w3-image" alt={ interest.alt } style={{ width: "200px", height: "auto", objectFit: "contain", float: "left", padding: "1em" }} />
-                        <h4>{ interest.brief }</h4>
-                        <div dangerouslySetInnerHTML={ { __html: interest.content } }/>
-                      </div> :
-                      <div>
-                        <div style={{height: "10em", width: "100%", textAlign: "center"}} >
-                          <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
-                          <img src={ require('../images/' + interest.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ interest.alt } />
-                        </div>
-                        <div style={{height: "2.5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
-                          <h4>{ interest.brief }</h4>
-                        </div>
-                      </div>
-                    }
-                  <Button onClick={ () => this.readMoreInterests( i ) }>
-                    { this.state.interestStates[ i ] ? "Show Less" : "Read More"}
-                  </Button>
-                </Col>
-              ) }
-            </Row>
+            <div className={ stylesHome.interestsWrapper }>
+              <div className={ stylesHome.interestsBar }>
+                { source.interests.map( ( interest, i ) =>
+                  <div key={ i } className={ stylesHome.option } onClick={ () => this.setState({ showInterest: i }) }>
+                    <img src={ require('../images/' + interest.image + '.jpg' ) } style={{width: "20%", height: "100%", objectFit: "contain", minWidth: "4em", padding: "5px"}} alt={ interest.alt } />
+                  <div className={ `${ stylesHome.text } ${ stylesHome.hideMobile }` }>
+                      <h4>{ interest.brief }</h4>
+                    </div>
+                  </div>
+                ) }
+              </div>
+              <div className={ stylesHome.openInterests }>
+                <img src={ require('../images/' + openInterest.image + '.jpg' ) } class="w3-round w3-image" alt={ openInterest.alt } style={{ width: "200px", height: "auto", objectFit: "contain", padding: "1em" }} />
+                <div className={ stylesHome.text }>
+                  <h4>{ openInterest.brief }</h4>
+                  <div dangerouslySetInnerHTML={ { __html: openInterest.content } }/>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </MainLayout>
-      );
+    );
   }
 }

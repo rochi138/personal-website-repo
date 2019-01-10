@@ -88,8 +88,63 @@
   }
 }
 
-.interests {
-	width: 100%;
+.interestsWrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+
+	@media screen and (max-width: 800px) {
+	  flex-direction: column;
+	}
+
+	.openInterests {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		@media screen and (max-width: 800px) {
+		  flex-direction: column;
+		  width: 100%;
+		}
+	}
+
+	.interestsBar {
+		flex: 0 1 12em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.option {
+			height: 3em;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			flex: none;
+
+			@media screen and (max-width: 800px) {
+				flex-basis: 0;
+				height: 10vw;
+			}
+
+			.text {
+				width: 8em;
+				white-space: wrap;
+				text-align: center;
+			}
+		}
+
+		@media screen and (max-width: 800px) {
+		  flex-direction: row;
+		  justify-content: center;
+		  flex-basis: 3em;
+		}
+	}
 }
 
 .floatContainer {
@@ -99,5 +154,11 @@
 	  content: "";
 	  clear: both;
 	  display: table;
+	}
+}
+
+.hideMobile {
+	@media screen and (max-width: 800px) {
+	  display: none!important;
 	}
 }
