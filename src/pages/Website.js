@@ -69,6 +69,14 @@ export default class Website extends Component{
                     </li>
             </ul></p>
           </div>
+          <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
+            <h2>Image Credits</h2>
+            <p><ul>
+              <li>Mukhin, Daniil. "D20 dice roleplay tabletop icon". IconFinder. <a href="https://www.iconfinder.com/icons/3057713/d20_dice_roleplay_tabletop_icon" target="_blank" rel="noopener noreferrer">https://www.iconfinder.com/icons/3057713/d20_dice_roleplay_tabletop_icon</a></li>
+              <li>Raevskaya, Polina. "Collection final glasses harry potter round scar". IconFinder. <a href="https://www.iconfinder.com/icons/763137/collection_final_glasses_harry_potter_round_scar_icon" target="_blank" rel="noopener noreferrer">https://www.iconfinder.com/icons/763137/collection_final_glasses_harry_potter_round_scar_icon</a></li>
+              <li>Random Curiosity. April 10, 2018. <a href="https://randomc.net/2018/04/10/golden-kamuy-01/" target="_blank" rel="noopener noreferrer">https://randomc.net/2018/04/10/golden-kamuy-01/</a></li>
+            </ul></p>
+          </div>
         </div>
       </MainLayout>
       );

@@ -17,6 +17,21 @@ export class ProjectSummary extends Component {
 	}
 }
 
+export class AwardsComponent extends Component {
+	render() {
+		const source = this.props.source;
+		return (
+			<div className={ styles.awardsComponent }>
+				<img src={ require('../images/' + source.image.src + '.jpg' ) } class="w3-round w3-image" alt={ source.image.alt } style={{objectFit: "contain", width:"15em", height:"15em" }} />
+				<h4>{ source.header }</h4>
+				{ source.caption && 
+					<div style={{ textAlign: "center" }} dangerouslySetInnerHTML={ { __html: source.caption } } />
+				}
+			</div>
+		)
+	}
+}
+
 export class SlideshowComponent extends Component {
 	constructor(props) {
     super(props);
@@ -54,12 +69,12 @@ export class SlideshowComponent extends Component {
                   <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
                   <div dangerouslySetInnerHTML={ { __html: image.description } } />
                 </ModalBody>
-                { source.length != 1 && 
+                { source.length !== 1 && 
 	                <ModalFooter>
-	                	{ i != 0 && 
+	                	{ i !== 0 && 
 	                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i - 1) }}>Previous</Button>
 	                	}
-	                	{ i != source.length - 1 && 
+	                	{ i !== source.length - 1 && 
 	                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i + 1) }}>Next</Button>
 	                	}
 	                </ModalFooter>
@@ -152,7 +167,7 @@ export class KeyTakeawaysComponent extends Component {
 		        </div></h2>
 		        <ul>
 				    { source.takeawayList.map( ( takeaway, i ) =>
-			        <li dangerouslySetInnerHTML={ { __html: takeaway } } />
+			        <li key={ i } dangerouslySetInnerHTML={ { __html: takeaway } } />
 			     	) }
 		     	</ul>
 		    </div>

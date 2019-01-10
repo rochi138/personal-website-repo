@@ -56,7 +56,7 @@ export default class Header extends Component{
               <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'about' ) }><i class="fa fa-user" /> ABOUT</div>
               <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'projects' ) }><i class="fa fa-th" /> PROJECTS</div>
               <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'contact' ) }><i class="fa fa-envelope" /> CONTACT</div>
-              
+              <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'interests' ) }><i class="fa fa-heart" /> INTERESTS</div>
             </div>
           }
         </div>
@@ -71,7 +71,7 @@ export default class Header extends Component{
                   <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'about' ) }>ABOUT</div>
                   <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'projects' ) }>PROJECTS</div>
                   <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'contact' ) }>CONTACT</div>
-                  
+                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'contact' ) }>INTERESTS</div>
                 </div> :
                 <div> 
                   <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'home' ) }>HOME</div>
