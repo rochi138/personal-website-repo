@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
 import { ProjectSummary, SlideshowComponent, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
+import styles from '../SCSS/Main.module.scss';
 
 export default class Website extends Component{
   constructor( props ) {
@@ -17,7 +18,7 @@ export default class Website extends Component{
 
     return(
       <MainLayout {...this.props} >
-        <div style={{ width: "80vw", margin: "auto", paddingRight: "8em", paddingLeft: "8em" }}>
+        <div className={ styles.siteWrapper }>
           <ProjectSummary
             source={ pageMeta.ProjectSummary }
           />
@@ -69,7 +70,7 @@ export default class Website extends Component{
                     </li>
             </ul></p>
           </div>
-          <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
+          <div style={{ marginTop: "3em", display: "block", overflowWrap: "break-word" }}>
             <h2>Image Credits</h2>
             <p><ul>
               <li>Mukhin, Daniil. "D20 dice roleplay tabletop icon". IconFinder. <a href="https://www.iconfinder.com/icons/3057713/d20_dice_roleplay_tabletop_icon" target="_blank" rel="noopener noreferrer">https://www.iconfinder.com/icons/3057713/d20_dice_roleplay_tabletop_icon</a></li>

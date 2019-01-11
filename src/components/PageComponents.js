@@ -7,7 +7,7 @@ export class ProjectSummary extends Component {
 		const source = this.props.source;
 		return (
 			<div className={ styles.projectSummary }>
-				<img src={ require('../images/' + source.image.src + '.jpg' ) } class="w3-round w3-image" alt={ source.image.alt } style={{objectFit: "contain" }} width="400" height="500" />
+				<img src={ require('../images/' + source.image.src + '.jpg' ) } class="w3-round w3-image" alt={ source.image.alt } style={{objectFit: "contain", maxWidth: "400px", maxHeight: "500px" }} width="80%" height="80%" />
 				<h1>{ source.projectName }</h1>
 				<h3>{ source.tagline }</h3>
 				<h4>{ source.type }</h4>
@@ -109,12 +109,12 @@ export class ProgressComponent extends Component {
 			 		</Row></h4>
 					{ source.updateList.map( ( update, i ) =>
 				      <Row key={ i } className={ styles.listItem }>
-				      	<Col md={ 2 }>{ update.date }</Col>
-				      	<Col md={ 10 }>
-		        		{ update.text.map( ( aspect, j ) =>
-				          <div dangerouslySetInnerHTML={ { __html: aspect } } key={ j }/>
-						    ) }
-			    		</Col>
+				      	<Col md={ 2 } className={ styles.title }>{ update.date }</Col>
+		        		<Col md={ 10 } className={ styles.description }>
+			        		{ update.text.map( ( aspect, j ) =>
+					          <div dangerouslySetInnerHTML={ { __html: aspect } } key={ j }/>
+							    ) }
+				    		</Col>
 				    	</Row>
 				  ) }
 	      </div>
@@ -140,8 +140,8 @@ export class MeetTheTeamComponent extends Component {
 				  </Row></h4>
 				  { source.memberList.map( ( member, i ) =>
 	          <Row key={ i } className={ styles.listItem }>
-		        	<Col md={ 2 } dangerouslySetInnerHTML={ { __html: member.name } } />
-		        	<Col md={ 10 }>
+		        	<Col md={ 2 } className={ styles.name } dangerouslySetInnerHTML={ { __html: member.name } } />
+		        	<Col md={ 10 } className={ styles.description }>
 		        		{ member.text.map( ( contribution, j ) =>
 				          <div dangerouslySetInnerHTML={ { __html: contribution } } key={ j }/>
 						    ) }
