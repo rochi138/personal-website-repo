@@ -149,11 +149,28 @@
 
 .floatContainer {
 	margin-top: 2em;
+	text-align: center;
 
 	&:after {
 	  content: "";
 	  clear: both;
 	  display: table;
+	}
+
+	.profilePic {
+		width: 40vw;
+		max-height: 333px;
+		object-fit: contain;
+		max-width: 300px;
+		padding: 5px;
+		float: left;
+
+		@media screen and (max-width: 800px) {
+		  float: none;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
 	}
 }
 
