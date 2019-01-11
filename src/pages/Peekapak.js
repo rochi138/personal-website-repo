@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
 import { ProjectSummary, SlideshowComponent, KeyTakeawaysComponent } from '../components/PageComponents';
+import styles from '../SCSS/Main.module.scss';
 
 export default class Peekapak extends Component{
   constructor(props) {
@@ -15,7 +16,7 @@ export default class Peekapak extends Component{
     const pageMeta = require('./Peekapak.json');
     return(
       <MainLayout {...this.props} >
-        <div style={{ width: "80vw", margin: "auto", paddingRight: "8em", paddingLeft: "8em" }}>
+        <div className={ styles.siteWrapper }>
           <ProjectSummary
             source={ pageMeta.ProjectSummary }
           />

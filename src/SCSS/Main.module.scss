@@ -1,3 +1,14 @@
+.siteWrapper {
+	width: 80vw;
+	margin: auto;
+	paddingRight: 8em;
+	paddingLeft: 8em;
+
+	@media screen and (max-width: 800px) {
+    padding: 0 2em;
+  }
+}
+
 .header {
 	position:fixed;
 	width:100%;
@@ -62,6 +73,7 @@
 .projectSummary {
 	text-align: center; 
 	margin-top: 5em;
+	overflow-wrap: break-word;
 
 	.summary {
 		text-align: left;
@@ -97,6 +109,18 @@
 .listItem {
 	border-top: 2px solid black;
 	padding: 10px 0px;
+
+	.title, .name {
+		@media screen and (max-width: 800px) {
+	    font-weight: bold;
+	  }
+	}
+
+	.description {
+		@media screen and (max-width: 800px) {
+	    padding-left: 2em;
+	  }
+	}
 }
 
 .footer {

@@ -55,8 +55,8 @@ export default class Home extends Component{
             <h3>ABOUT ME</h3>
             <div className={ stylesHome.subTitle }>Candidate for Systems Design Engineering Class 2022</div>
             <div className={ stylesHome.floatContainer }>
-              <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" style={{ width: "40vw", height: "333px", objectFit: "contain", float: "left", maxWidth: "300px", padding: "5px" }} />
-              <div dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
+              <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" className={ stylesHome.profilePic } />
+              <div style={{ textAlign: "left", marginBottom: "1em" }} dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
             </div>
             <Button className={ stylesHome.resumeButton } style={{ backgroundColor: "#ccc", border: "none" }}>
               <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
