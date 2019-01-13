@@ -155,6 +155,42 @@ export class MeetTheTeamComponent extends Component {
   }
 }
 
+export class TableComponent extends Component {
+  render(){
+  	const source = this.props.source;
+    return(
+    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
+	    <div className={ styles.meetTheTeamComponent }>
+	      <div className={ styles.main }>
+	        <h2><div className={ styles.title }>
+	          { source.title }
+	        </div></h2>
+	        { source.link &&
+	          <div className={ styles.link }>
+	            <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a>
+	          </div>
+	        }
+		      <h4><Row classname={ styles.header }>
+	          <Col md={ 2 }>{ source.leftTitle }</Col>
+				  	<Col md={ 10 }>{ source.rightTitle }</Col>
+				  </Row></h4>
+				  { source.list.map( ( item, i ) =>
+	          <Row key={ i } className={ styles.listItem }>
+		        	<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
+		        	<Col md={ 10 } className={ styles.right }>
+		        		{ item.right.map( ( point, j ) =>
+				          <div dangerouslySetInnerHTML={ { __html: point } } key={ j }/>
+						    ) }
+			    		</Col>
+	        	</Row>
+			    ) }
+	      </div>
+	    </div>
+    </div>
+    )
+  }
+}
+
 export class KeyTakeawaysComponent extends Component {
   render(){
   	const source = this.props.source;

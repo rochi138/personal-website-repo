@@ -86,17 +86,7 @@
 	align-items: center;
 }
 
-.progressComponent {
-	overflow: hidden;
-
-	.main {
-		.title {
-
-		}
-	}
-}
-
-.meetTheTeamComponent {
+.tableComponent {
 	overflow: hidden;
 
 	.main {
@@ -110,13 +100,13 @@
 	border-top: 2px solid black;
 	padding: 10px 0px;
 
-	.title, .name {
+	.left {
 		@media screen and (max-width: 800px) {
 	    font-weight: bold;
 	  }
 	}
 
-	.description {
+	.right {
 		@media screen and (max-width: 800px) {
 	    padding-left: 2em;
 	  }

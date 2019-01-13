@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
-import { ProjectSummary, AwardsComponent, SlideshowComponent, ProgressComponent, MeetTheTeamComponent, ListComponent } from '../components/PageComponents';
+import { ProjectSummary, AwardsComponent, SlideshowComponent, TableComponent, ListComponent } from '../components/PageComponents';
 
 const componentsList = {
     ProjectSummary: ProjectSummary,
     AwardsComponent: AwardsComponent,
     SlideshowComponent: SlideshowComponent,
-    ProgressComponent: ProgressComponent,
-    MeetTheTeamComponent: MeetTheTeamComponent,
+    TableComponent: TableComponent,
     ListComponent: ListComponent
   }
 
