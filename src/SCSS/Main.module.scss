@@ -1,8 +1,8 @@
 .siteWrapper {
 	width: 80vw;
 	margin: auto;
-	paddingRight: 8em;
-	paddingLeft: 8em;
+	padding-right: 8em;
+	padding-left: 8em;
 
 	@media screen and (max-width: 800px) {
     padding: 0 2em;
@@ -126,7 +126,7 @@
 	padding-top: 64px;
 	padding-bottom: 64px;
 	opacity: 0.60;
-	marginTop: 3em;
+	margin-top: 3em;
 
 	.toTop {
 		border:none;
