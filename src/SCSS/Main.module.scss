@@ -93,6 +93,11 @@
 		.title {
 
 		}
+		.rightTitle {
+			@media screen and (max-width: 800px) {
+			  padding-left: 30px;
+			}
+		}
 	}
 }
 
@@ -105,12 +110,11 @@
 	    font-weight: bold;
 	  }
 	}
-
 	.right {
-		@media screen and (max-width: 800px) {
-	    padding-left: 2em;
-	  }
+	@media screen and (max-width: 800px) {
+	  padding-left: 30px;
 	}
+}	
 }
 
 .footer {

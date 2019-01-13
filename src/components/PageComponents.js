@@ -88,79 +88,12 @@ export class SlideshowComponent extends Component {
   }
 }
 
-export class ProgressComponent extends Component {
-  render(){
-  	const source = this.props.source;
-    return(
-    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.progressComponent }>
-	      <div className={ styles.main }>
-	        <h2><div className={ styles.title }>
-	          Progress
-	        </div></h2>
-	        { source.link &&
-	          <div className={ styles.link }>
-	            <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a>
-	          </div>
-	        }
-		      <h4><Row classname={ styles.header }>
-	          <Col md={ 2 }>Date</Col>
-			  		<Col md={ 10 }>Update Description</Col>
-			 		</Row></h4>
-					{ source.updateList.map( ( update, i ) =>
-				      <Row key={ i } className={ styles.listItem }>
-				      	<Col md={ 2 } className={ styles.title }>{ update.date }</Col>
-		        		<Col md={ 10 } className={ styles.description }>
-			        		{ update.text.map( ( aspect, j ) =>
-					          <div dangerouslySetInnerHTML={ { __html: aspect } } key={ j }/>
-							    ) }
-				    		</Col>
-				    	</Row>
-				  ) }
-	      </div>
-	    </div>
-    </div>
-    )
-  }
-}
-
-export class MeetTheTeamComponent extends Component {
-  render(){
-  	const source = this.props.source;
-    return(
-    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.meetTheTeamComponent }>
-	      <div className={ styles.main }>
-	        <h2><div className={ styles.title }>
-	          Meet the Team!
-	        </div></h2>
-		      <h4><Row classname={ styles.header }>
-	          <Col md={ 2 }>Name</Col>
-				  	<Col md={ 10 }>Contribution</Col>
-				  </Row></h4>
-				  { source.memberList.map( ( member, i ) =>
-	          <Row key={ i } className={ styles.listItem }>
-		        	<Col md={ 2 } className={ styles.name } dangerouslySetInnerHTML={ { __html: member.name } } />
-		        	<Col md={ 10 } className={ styles.description }>
-		        		{ member.text.map( ( contribution, j ) =>
-				          <div dangerouslySetInnerHTML={ { __html: contribution } } key={ j }/>
-						    ) }
-			    		</Col>
-	        	</Row>
-			    ) }
-	      </div>
-	    </div>
-    </div>
-    )
-  }
-}
-
 export class TableComponent extends Component {
   render(){
   	const source = this.props.source;
     return(
     <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.meetTheTeamComponent }>
+	    <div className={ styles.tableComponent }>
 	      <div className={ styles.main }>
 	        <h2><div className={ styles.title }>
 	          { source.title }
@@ -172,7 +105,7 @@ export class TableComponent extends Component {
 	        }
 		      <h4><Row classname={ styles.header }>
 	          <Col md={ 2 }>{ source.leftTitle }</Col>
-				  	<Col md={ 10 }>{ source.rightTitle }</Col>
+				  	<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
 				  </Row></h4>
 				  { source.list.map( ( item, i ) =>
 	          <Row key={ i } className={ styles.listItem }>
@@ -185,28 +118,6 @@ export class TableComponent extends Component {
 	        	</Row>
 			    ) }
 	      </div>
-	    </div>
-    </div>
-    )
-  }
-}
-
-export class KeyTakeawaysComponent extends Component {
-  render(){
-  	const source = this.props.source;
-    return(
-    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.keyTakeawaysComponent }>
-		    <div className={ styles.main }>
-		        <h2><div className={ styles.title }>
-		            Key Takeaways
-		        </div></h2>
-		        <ul>
-				    { source.takeawayList.map( ( takeaway, i ) =>
-			        <li key={ i } dangerouslySetInnerHTML={ { __html: takeaway } } />
-			     	) }
-		     	</ul>
-		    </div>
 	    </div>
     </div>
     )

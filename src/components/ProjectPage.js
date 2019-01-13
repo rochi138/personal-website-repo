@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
 import { ProjectSummary, AwardsComponent, SlideshowComponent, TableComponent, ListComponent } from '../components/PageComponents';
+import styles from '../SCSS/Main.module.scss';
 
 const componentsList = {
     ProjectSummary: ProjectSummary,
@@ -30,10 +31,11 @@ export default class ProjectPage extends Component{
   }
   
   render(){
+    console.log(this.props);
     const pageMeta = this.state.pageMeta;
     return(
       <MainLayout {...this.props} >
-        <div style={{ width: "80vw", margin: "auto", paddingRight: "8em", paddingLeft: "8em" }}>
+        <div className={ styles.siteWrapper }>
           { pageMeta.components.map( ( component, i ) =>
             <div key = { i }>
               { this.componentRender( component ) }

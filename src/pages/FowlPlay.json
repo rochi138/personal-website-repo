@@ -1,5 +1,6 @@
 {
-  "components": [{
+  "components": [
+    {
       "componentName": "ProjectSummary",
       "projectName": "FowlPlay",
       "tagline": "Ready of the fowlout?",
@@ -21,7 +22,8 @@
     },
     {
       "componentName": "SlideshowComponent",
-      "slideshow": [{
+      "slideshow": [
+        {
           "image": {
             "src": "fowlPlayBanner",
             "alt": "FowlPlay Banner"
@@ -53,7 +55,8 @@
       "link": "https://github.com/rochi138/fowlplay",
       "leftTitle": "Date",
       "rightTitle": "Update Description",
-      "list": [{
+      "list": [
+        {
           "left": "20/10/2018",
           "right": [
             "Plot is expanded and refined to allow more character growth.",
@@ -78,7 +81,8 @@
       "title": "Meet The Team",
       "leftTitle": "Name",
       "rightTitle": "Contribution",
-      "list": [{
+      "list": [
+        {
           "left": "Robyn Ching",
           "right": [
             "Created Game Manager.",
