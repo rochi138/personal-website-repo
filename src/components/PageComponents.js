@@ -37,7 +37,7 @@ export class SlideshowComponent extends Component {
     super(props);
 
     var modalStates = [];
-    this.props.source.forEach(function(element) {
+    this.props.source.slideshow.forEach(function(element) {
       modalStates.push( false );
     });
 
@@ -60,7 +60,7 @@ export class SlideshowComponent extends Component {
     return(
 	    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
 		    <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
-          { source.map( ( image, i ) =>
+          { source.slideshow.map( ( image, i ) =>
             <Col key={ i } onClick={ () => this.toggleModal( i ) } style={{ textAlign: "center" }}>
               <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%", maxWidth: "300px", minWidth: "100px"}} alt={ image.image.alt }/>
               <Modal isOpen={ this.state.modalStates[ i ] } toggle={ () => this.toggleModal( i ) } size="lg">
