@@ -6,6 +6,7 @@ import HireMePwease from './pages/HireMePwease';
 import Website from './pages/Website';
 import FowlPlay from './pages/FowlPlay';
 import Peekapak from './pages/Peekapak';
+import ProjectPage from './components/ProjectPage'
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
         <Route path='/Peekapak' component={ Peekapak } />
         <Route path='/HireMePwease' component={ HireMePwease } />
         <Route path='/Website' component={ Website } />
-        <Route path='/FowlPlay' component={ FowlPlay } />
+        <Route path='/FowlPlay' render={() => <ProjectPage fileName='FowlPlay' />} />
       </div>
     );
   }
