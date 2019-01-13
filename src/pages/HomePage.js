@@ -82,7 +82,8 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Previous work and personal projects.<br /> Click for the project's page</div>
             <Row>
               { source.projects.map( ( project, i ) =>
-                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
+                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) } style={{ 
+      cursor: "pointer" }}>
                   <div style={{height: "16em", width: "100%", textAlign: "center"}} >
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
                     <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
