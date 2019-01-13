@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MainLayout } from '../components/MainLayout';
-import { ProjectSummary, AwardsComponent, SlideshowComponent, ProgressComponent, MeetTheTeamComponent, KeyTakeawaysComponent } from '../components/PageComponents';
+import { ProjectSummary, AwardsComponent, SlideshowComponent, ProgressComponent, MeetTheTeamComponent, ListComponent } from '../components/PageComponents';
 
 const componentsList = {
     ProjectSummary: ProjectSummary,
@@ -8,7 +8,7 @@ const componentsList = {
     SlideshowComponent: SlideshowComponent,
     ProgressComponent: ProgressComponent,
     MeetTheTeamComponent: MeetTheTeamComponent,
-    KeyTakeawaysComponent: KeyTakeawaysComponent
+    ListComponent: ListComponent
   }
 
 export default class ProjectPage extends Component{
@@ -36,7 +36,7 @@ export default class ProjectPage extends Component{
       <MainLayout {...this.props} >
         <div style={{ width: "80vw", margin: "auto", paddingRight: "8em", paddingLeft: "8em" }}>
           { pageMeta.components.map( ( component, i ) =>
-            <div>
+            <div key = { i }>
               { this.componentRender( component ) }
             </div>
           ) }

@@ -176,3 +176,25 @@ export class KeyTakeawaysComponent extends Component {
     )
   }
 }
+
+export class ListComponent extends Component {
+  render(){
+  	const source = this.props.source;
+    return(
+    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
+	    <div className={ styles.listComponent }>
+		    <div className={ styles.main }>
+		        <h2><div className={ styles.title }>
+		          { source.title }
+		        </div></h2>
+		        <ul>
+				    { source.list.map( ( takeaway, i ) =>
+			        <li key={ i } dangerouslySetInnerHTML={ { __html: takeaway } } />
+			     	) }
+		     	</ul>
+		    </div>
+	    </div>
+    </div>
+    )
+  }
+}
