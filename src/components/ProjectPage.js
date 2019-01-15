@@ -18,7 +18,6 @@ export default class ProjectPage extends Component{
     this.state ={
       pageMeta: require('../pages/' + this.props.fileName + '.json')
     }
-
   }
 
   componentDidMount() {
@@ -31,7 +30,6 @@ export default class ProjectPage extends Component{
   }
   
   render(){
-    console.log(this.props);
     const pageMeta = this.state.pageMeta;
     return(
       <MainLayout {...this.props} >

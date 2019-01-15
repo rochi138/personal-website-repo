@@ -20,6 +20,19 @@
       "header": "Won First Place"
     },
     {
+      "componentName": "SlideshowComponent",
+      "slideshow": [
+        {
+          "image": {
+            "src": "screenshot-hire-form",
+            "alt": "Hire Me Pwease Form"
+          },
+          "title": "Hire Me Pwease Form",
+          "description": "Homepage of Hire Me Pwease.<br />Takes in information to generate resume from."
+        }
+      ]
+    },
+    {
       "componentName": "TableComponent",
       "title": "Progress",
       "link": "https://github.com/rochi138/hire-me-pwease",
