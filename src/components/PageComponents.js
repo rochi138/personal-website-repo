@@ -43,7 +43,8 @@ export class SlideshowComponent extends Component {
 
     this.state={
       source: this.props.source,
-      modalStates: modalStates
+      modalStates: modalStates,
+      hover: undefined
     }
   }
 
@@ -59,9 +60,9 @@ export class SlideshowComponent extends Component {
   	const source = this.props.source;
     return(
 	    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-		    <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
+		    <div className={ styles.slideshowComponent }>
           { source.slideshow.map( ( image, i ) =>
-            <Col key={ i } onClick={ () => this.toggleModal( i ) } style={{ textAlign: "center" }}>
+            <Col key={ i } onClick={ () => this.toggleModal( i ) } className={ styles.slidePicture } onMouseEnter={ () => this.setState({ hover: i })} onMouseLeave={ () => this.setState({ hover: undefined })} style={ ( this.state.hover !== undefined && i!== this.state.hover ) ? {opacity: 0.6} : {opacity: 1}}>
               <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%", maxWidth: "300px", minWidth: "100px"}} alt={ image.image.alt }/>
               <Modal isOpen={ this.state.modalStates[ i ] } toggle={ () => this.toggleModal( i ) } size="lg">
                 <ModalHeader toggle={ () => this.toggleModal( i ) }>{ image.title }</ModalHeader>

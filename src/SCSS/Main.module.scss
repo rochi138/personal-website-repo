@@ -86,6 +86,16 @@
 	align-items: center;
 }
 
+.slideshowComponent {
+	display: flex;
+	flexDirection: row;
+	flexWrap: wrap;
+
+	.slidePicture {
+		textAlign: center;
+	}
+}
+
 .tableComponent {
 	overflow: hidden;
 
