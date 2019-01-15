@@ -19,6 +19,7 @@ export default class Home extends Component{
       showProjects: false,
       showSYDE: false,
       showInterest: 0,
+      hoverInterest: undefined,
     }
 
     this.readMore = this.readMore.bind( this );
@@ -59,7 +60,7 @@ export default class Home extends Component{
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{ textAlign: "left", marginBottom: "1em" }} dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
               <Button style={{ backgroundColor:"black", marginTop: "10px" }}>
-              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "white" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet?<br />Take a quick look!</a>
+              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "white" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202019%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet?<br />Take a quick look!</a>
             </Button>
             </div>
             </div>
@@ -141,9 +142,9 @@ export default class Home extends Component{
             <div className={ stylesHome.interestsWrapper }>
               <div className={ stylesHome.interestsBar }>
                 { source.interests.map( ( interest, i ) =>
-                  <div key={ i } className={ stylesHome.option } onClick={ () => this.setState({ showInterest: i }) }>
+                  <div key={ i } className={ stylesHome.option } onClick={ () => this.setState({ showInterest: i }) } onMouseEnter={ () => this.setState({ hoverInterest: i })} onMouseLeave={ () => this.setState({ hoverInterest: undefined })} style={ ( this.state.hoverInterest !== undefined && i!== this.state.hoverInterest ) ? {opacity: 0.4} : {opacity: 1}}>
                     <img src={ require('../images/' + interest.image + '.jpg' ) } style={{width: "20%", height: "100%", objectFit: "contain", minWidth: "4em", padding: "5px"}} alt={ interest.alt } />
-                  <div className={ `${ stylesHome.text } ${ stylesHome.hideMobile }` }>
+                    <div className={ `${ stylesHome.text } ${ stylesHome.hideMobile }` }>
                       <h4>{ interest.brief }</h4>
                     </div>
                   </div>
