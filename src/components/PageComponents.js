@@ -69,12 +69,12 @@ export class SlideshowComponent extends Component {
                   <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
                   <div dangerouslySetInnerHTML={ { __html: image.description } } />
                 </ModalBody>
-                { source.length !== 1 && 
+                { source.slideshow.length !== 1 && 
 	                <ModalFooter>
 	                	{ i !== 0 && 
 	                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i - 1) }}>Previous</Button>
 	                	}
-	                	{ i !== source.length - 1 && 
+	                	{ i !== source.slideshow.length - 1 && 
 	                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i + 1) }}>Next</Button>
 	                	}
 	                </ModalFooter>
