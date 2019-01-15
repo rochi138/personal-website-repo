@@ -56,11 +56,13 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Candidate for Systems Design Engineering Class 2022</div>
             <div className={ stylesHome.floatContainer }>
               <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" className={ stylesHome.profilePic } />
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{ textAlign: "left", marginBottom: "1em" }} dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
-            </div>
-            <Button className={ stylesHome.resumeButton } style={{ backgroundColor: "#ccc", border: "none" }}>
-              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
+              <Button style={{ backgroundColor:"black", marginTop: "10px" }}>
+              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "white" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet?<br />Take a quick look!</a>
             </Button>
+            </div>
+            </div>
           </div>
           <div className={ stylesHome.sectionContainer} id="whatissyde" style={{paddingTop: "0"}}>
             <h3>WHAT IS SYSTEMS DESIGN ENGINEERING?</h3>
