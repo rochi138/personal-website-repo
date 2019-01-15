@@ -1,8 +1,8 @@
 .siteWrapper {
 	width: 80vw;
 	margin: auto;
-	paddingRight: 8em;
-	paddingLeft: 8em;
+	padding-right: 8em;
+	padding-left: 8em;
 
 	@media screen and (max-width: 800px) {
     padding: 0 2em;
@@ -86,22 +86,27 @@
 	align-items: center;
 }
 
-.progressComponent {
+.slideshowComponent {
+	display: flex;
+	flexDirection: row;
+	flexWrap: wrap;
+
+	.slidePicture {
+		textAlign: center;
+	}
+}
+
+.tableComponent {
 	overflow: hidden;
 
 	.main {
 		.title {
 
 		}
-	}
-}
-
-.meetTheTeamComponent {
-	overflow: hidden;
-
-	.main {
-		.title {
-
+		.rightTitle {
+			@media screen and (max-width: 800px) {
+			  padding-left: 30px;
+			}
 		}
 	}
 }
@@ -110,17 +115,16 @@
 	border-top: 2px solid black;
 	padding: 10px 0px;
 
-	.title, .name {
+	.left {
 		@media screen and (max-width: 800px) {
 	    font-weight: bold;
 	  }
 	}
-
-	.description {
-		@media screen and (max-width: 800px) {
-	    padding-left: 2em;
-	  }
+	.right {
+	@media screen and (max-width: 800px) {
+	  padding-left: 30px;
 	}
+}	
 }
 
 .footer {
@@ -132,7 +136,7 @@
 	padding-top: 64px;
 	padding-bottom: 64px;
 	opacity: 0.60;
-	marginTop: 3em;
+	margin-top: 3em;
 
 	.toTop {
 		border:none;

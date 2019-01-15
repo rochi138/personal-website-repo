@@ -6,6 +6,12 @@
   	"text": "<p>Systems Design Engineering (SYDE) mixes the Systems Thinking mentality with the design, or means, to bring about change. Systems Thinking is primarily about seeing connections. This can be seen through the idea that entities are systems, parts of a system, or a product of a system. Take for example an airplane. It is a system made of mechanical and electrical parts. It is serves as part of a much larger fleet from an airline company. It is created through a rigorous design and manufacturing process. Systems Thinking doesn't just cover connections within current systems; Systems Thinking covers consequences of the system's components and the future of the system (is it future-proof?). SYDE also focuses on user-centered design. When creating a product, think about the user first and foremost. How does the user interact with this? What are the user's needs? And most importantly, will the user actually use this? The design portion is about ways to break down a problem and consider \"all\" possible solutions before drawing a conclusion about the solution. Other engineering disciplines specialize in a certain field, however SYDE is interdisciplinary in nature and is similar to a first year's General Engineering at another school. This enables students to be knowledgable about all types of engineering, allowing them to forumalte more feasible and effective designs. <br /><br />This is an extremely high-level view of the program and strongly opinionated one. Systems Design Engineering is quite difficult to describe.<br /><br />For more about Systems Design, please check out the following sites:<br /><a href=\"https://www.techopedia.com/definition/29998/system-design\" target=\"_blank\" rel=\"noopener noreferrer\">What does System Design mean?</a><br /><a href=\"https://www.youtube.com/watch?v=V38HrPnYkHI\" target=\"_blank\" rel=\"noopener noreferrer\">What is systems thinking? by Peter Senge, Author of The Fifth Discipline</a><br /><a href=\"https://thesystemsthinker.com/systems-thinking-what-why-when-where-and-how/\" target=\"_blank\" rel=\"noopener noreferrer\">Systems Thinking: What, Why, When, Where, and How?</a><br /></p>"
   },
   "projects": [
+    { "link": "Website",
+      "image": "react-js",
+      "alt": "React JS Logo",
+      "name": "personal-website-repo",
+      "description": "Personal Website"
+    },
     { "link": "Peekapak",
       "image": "peekapak-logo",
       "alt": "Peekapak Logo",
@@ -23,12 +29,6 @@
   		"alt": "FowlPlay Thumbnail",
   		"name": "FowlPlay",
   		"description": "2D Platform Game"
-  	},
-  	{ "link": "Website",
-  		"image": "react-js",
-  		"alt": "React JS Logo",
-  		"name": "personal-website-repo",
-  		"description": "Personal Website"
   	}
   ],
   "interests": [

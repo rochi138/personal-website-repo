@@ -37,13 +37,14 @@ export class SlideshowComponent extends Component {
     super(props);
 
     var modalStates = [];
-    this.props.source.forEach(function(element) {
+    this.props.source.slideshow.forEach(function(element) {
       modalStates.push( false );
     });
 
     this.state={
       source: this.props.source,
-      modalStates: modalStates
+      modalStates: modalStates,
+      hover: undefined
     }
   }
 
@@ -59,9 +60,9 @@ export class SlideshowComponent extends Component {
   	const source = this.props.source;
     return(
 	    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-		    <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
-          { source.map( ( image, i ) =>
-            <Col key={ i } onClick={ () => this.toggleModal( i ) } style={{ textAlign: "center" }}>
+		    <div className={ styles.slideshowComponent }>
+          { source.slideshow.map( ( image, i ) =>
+            <Col key={ i } onClick={ () => this.toggleModal( i ) } className={ styles.slidePicture } onMouseEnter={ () => this.setState({ hover: i })} onMouseLeave={ () => this.setState({ hover: undefined })} style={ ( this.state.hover !== undefined && i!== this.state.hover ) ? {opacity: 0.6} : {opacity: 1}}>
               <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%", maxWidth: "300px", minWidth: "100px"}} alt={ image.image.alt }/>
               <Modal isOpen={ this.state.modalStates[ i ] } toggle={ () => this.toggleModal( i ) } size="lg">
                 <ModalHeader toggle={ () => this.toggleModal( i ) }>{ image.title }</ModalHeader>
@@ -69,12 +70,12 @@ export class SlideshowComponent extends Component {
                   <img src={ require('../images/' + image.image.src + '.jpg')} style={{ width: "100%" }} alt={ image.image.alt }/>
                   <div dangerouslySetInnerHTML={ { __html: image.description } } />
                 </ModalBody>
-                { source.length !== 1 && 
+                { source.slideshow.length !== 1 && 
 	                <ModalFooter>
 	                	{ i !== 0 && 
 	                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i - 1) }}>Previous</Button>
 	                	}
-	                	{ i !== source.length - 1 && 
+	                	{ i !== source.slideshow.length - 1 && 
 	                		<Button onClick={ () => { this.toggleModal( i ); this.toggleModal( i + 1) }}>Next</Button>
 	                	}
 	                </ModalFooter>
@@ -88,15 +89,15 @@ export class SlideshowComponent extends Component {
   }
 }
 
-export class ProgressComponent extends Component {
+export class TableComponent extends Component {
   render(){
   	const source = this.props.source;
     return(
     <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.progressComponent }>
+	    <div className={ styles.tableComponent }>
 	      <div className={ styles.main }>
 	        <h2><div className={ styles.title }>
-	          Progress
+	          { source.title }
 	        </div></h2>
 	        { source.link &&
 	          <div className={ styles.link }>
@@ -104,46 +105,15 @@ export class ProgressComponent extends Component {
 	          </div>
 	        }
 		      <h4><Row classname={ styles.header }>
-	          <Col md={ 2 }>Date</Col>
-			  		<Col md={ 10 }>Update Description</Col>
-			 		</Row></h4>
-					{ source.updateList.map( ( update, i ) =>
-				      <Row key={ i } className={ styles.listItem }>
-				      	<Col md={ 2 } className={ styles.title }>{ update.date }</Col>
-		        		<Col md={ 10 } className={ styles.description }>
-			        		{ update.text.map( ( aspect, j ) =>
-					          <div dangerouslySetInnerHTML={ { __html: aspect } } key={ j }/>
-							    ) }
-				    		</Col>
-				    	</Row>
-				  ) }
-	      </div>
-	    </div>
-    </div>
-    )
-  }
-}
-
-export class MeetTheTeamComponent extends Component {
-  render(){
-  	const source = this.props.source;
-    return(
-    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.meetTheTeamComponent }>
-	      <div className={ styles.main }>
-	        <h2><div className={ styles.title }>
-	          Meet the Team!
-	        </div></h2>
-		      <h4><Row classname={ styles.header }>
-	          <Col md={ 2 }>Name</Col>
-				  	<Col md={ 10 }>Contribution</Col>
+	          <Col md={ 2 }>{ source.leftTitle }</Col>
+				  	<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
 				  </Row></h4>
-				  { source.memberList.map( ( member, i ) =>
+				  { source.list.map( ( item, i ) =>
 	          <Row key={ i } className={ styles.listItem }>
-		        	<Col md={ 2 } className={ styles.name } dangerouslySetInnerHTML={ { __html: member.name } } />
-		        	<Col md={ 10 } className={ styles.description }>
-		        		{ member.text.map( ( contribution, j ) =>
-				          <div dangerouslySetInnerHTML={ { __html: contribution } } key={ j }/>
+		        	<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
+		        	<Col md={ 10 } className={ styles.right }>
+		        		{ item.right.map( ( point, j ) =>
+				          <div dangerouslySetInnerHTML={ { __html: point } } key={ j }/>
 						    ) }
 			    		</Col>
 	        	</Row>
@@ -155,19 +125,19 @@ export class MeetTheTeamComponent extends Component {
   }
 }
 
-export class KeyTakeawaysComponent extends Component {
+export class ListComponent extends Component {
   render(){
   	const source = this.props.source;
     return(
-    <div style={{ marginTop: "3em", display: "block", overflow: "auto" }}>
-	    <div className={ styles.keyTakeawaysComponent }>
+    <div style={{ marginTop: "3em", display: "block", overflow: "auto", overflowWrap: "break-word" }}>
+	    <div className={ styles.listComponent }>
 		    <div className={ styles.main }>
-		        <h2><div className={ styles.title }>
-		            Key Takeaways
-		        </div></h2>
-		        <ul>
-				    { source.takeawayList.map( ( takeaway, i ) =>
-			        <li key={ i } dangerouslySetInnerHTML={ { __html: takeaway } } />
+	        <h2><div className={ styles.title }>
+	          { source.title }
+	        </div></h2>
+	        <ul>
+				    { source.list.map( ( point, i ) =>
+			        <li key={ i } dangerouslySetInnerHTML={ { __html: point } } />
 			     	) }
 		     	</ul>
 		    </div>

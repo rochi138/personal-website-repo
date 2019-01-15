@@ -19,6 +19,7 @@ export default class Home extends Component{
       showProjects: false,
       showSYDE: false,
       showInterest: 0,
+      hoverInterest: undefined,
     }
 
     this.readMore = this.readMore.bind( this );
@@ -56,11 +57,13 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Candidate for Systems Design Engineering Class 2022</div>
             <div className={ stylesHome.floatContainer }>
               <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" className={ stylesHome.profilePic } />
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{ textAlign: "left", marginBottom: "1em" }} dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
-            </div>
-            <Button className={ stylesHome.resumeButton } style={{ backgroundColor: "#ccc", border: "none" }}>
-              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "black" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202018%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet? Take a quick look!</a>
+              <Button style={{ backgroundColor:"black", marginTop: "10px" }}>
+              <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "white" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202019%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet?<br />Take a quick look!</a>
             </Button>
+            </div>
+            </div>
           </div>
           <div className={ stylesHome.sectionContainer} id="whatissyde" style={{paddingTop: "0"}}>
             <h3>WHAT IS SYSTEMS DESIGN ENGINEERING?</h3>
@@ -82,7 +85,8 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Previous work and personal projects.<br /> Click for the project's page</div>
             <Row>
               { source.projects.map( ( project, i ) =>
-                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
+                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) } style={{ 
+      cursor: "pointer" }}>
                   <div style={{height: "16em", width: "100%", textAlign: "center"}} >
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
                     <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
@@ -138,9 +142,9 @@ export default class Home extends Component{
             <div className={ stylesHome.interestsWrapper }>
               <div className={ stylesHome.interestsBar }>
                 { source.interests.map( ( interest, i ) =>
-                  <div key={ i } className={ stylesHome.option } onClick={ () => this.setState({ showInterest: i }) }>
+                  <div key={ i } className={ stylesHome.option } onClick={ () => this.setState({ showInterest: i }) } onMouseEnter={ () => this.setState({ hoverInterest: i })} onMouseLeave={ () => this.setState({ hoverInterest: undefined })} style={ ( this.state.hoverInterest !== undefined && i!== this.state.hoverInterest ) ? {opacity: 0.4} : {opacity: 1}}>
                     <img src={ require('../images/' + interest.image + '.jpg' ) } style={{width: "20%", height: "100%", objectFit: "contain", minWidth: "4em", padding: "5px"}} alt={ interest.alt } />
-                  <div className={ `${ stylesHome.text } ${ stylesHome.hideMobile }` }>
+                    <div className={ `${ stylesHome.text } ${ stylesHome.hideMobile }` }>
                       <h4>{ interest.brief }</h4>
                     </div>
                   </div>
