@@ -19,6 +19,7 @@ export default class Home extends Component{
       showProjects: false,
       showSYDE: false,
       showInterest: 0,
+      hoverProject: undefined,
       hoverInterest: undefined,
     }
 
@@ -56,7 +57,7 @@ export default class Home extends Component{
             <h3>ABOUT ME</h3>
             <div className={ stylesHome.subTitle }>Candidate for Systems Design Engineering Class 2022</div>
             <div className={ stylesHome.floatContainer }>
-              <img src={ require( '../images/robynProfile.JPG' ) } class="w3-round w3-image" alt="Profile" className={ stylesHome.profilePic } />
+              <img src={ require( '../images/robynProfile2.JPG' ) } class="w3-round w3-image" alt="Profile" className={ stylesHome.profilePic } />
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{ textAlign: "left", marginBottom: "1em" }} dangerouslySetInnerHTML={ { __html: source.aboutMe.text } }/>
               <Button style={{ backgroundColor:"black", marginTop: "10px" }}>
@@ -85,8 +86,7 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Previous work and personal projects.<br /> Click for the project's page</div>
             <Row>
               { source.projects.map( ( project, i ) =>
-                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) } style={{ 
-      cursor: "pointer" }}>
+                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) } onMouseEnter={ () => this.setState({ hoverProject: i })} onMouseLeave={ () => this.setState({ hoverProject: undefined })} style={ ( this.state.hoverProject !== undefined && i!== this.state.hoverProject ) ? {opacity: 0.4, cursor: "pointer"} : {opacity: 1, cursor: "pointer"}}>
                   <div style={{height: "16em", width: "100%", textAlign: "center"}} >
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
                     <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />

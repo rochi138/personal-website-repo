@@ -69,6 +69,22 @@
           "Copied <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Parallex Template</a> from <a href=\"https://www.w3schools.com/\" target=\"_blank\" rel=\"noopener noreferrer\">W3Schools</a>.",
           "Due to lack of experience in HTML, CSS and JavaScript, site was left in a half-finished, unpresentable state."
         ]
+      },
+      {
+        "left": "Approximately November 2018", 
+        "right": [
+          "Complete overhaul of website begins",
+          "Due to newly gained experience and a better overall idea, website will be revamped to include new features, updated information and better software maintainability"
+        ]
+      },
+      {
+        "left": "15/01/2019", 
+        "right": [
+          "Complete overhaul of website complete",
+          "Website is in a presentable and stable state. More features will be added in the future (see Future Features)",
+          "Added features:",
+          "<ul><li><b>React App:</b> website is no longer pure hard-coded HTML and has multiple pages</li><li><b>Mobile view:</b> website has a decent (or at least passable) layout on mobile devices; check out homepage Interests</li><li><b>JSON Storage:</b> project pages are procedurally generated from JSON files</li><li><b>Slideshow:</b> images on individual project pages can be viewed with a slideshow modal</li><li><b>Opacity:</b> homepage projects, hompage interests and project page images will all change opacity when hovered</li><li><b>SCSS:</b> converted all CSS to SCSS for maintainability</li><li><b>Information:</b> updated images, 'About Me', resume, 'Projects', and 'Interests'</li><li>Removed any old and non-functional features from old version</li></ul>"
+        ]
       }
     ]
     },
