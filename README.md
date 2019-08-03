@@ -1,4 +1,4 @@
-#Source code for [my personal website](https://rochi138.github.io/personal-website-repo)#
+# Source code for [my personal website](https://rochi138.github.io/personal-website-repo)
 
 Acts as a personal repo of many features including:
 * procedurally generating components
@@ -8,6 +8,7 @@ Acts as a personal repo of many features including:
 * fontawesome icons
 * dark mode
 * emailing capabilities
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
