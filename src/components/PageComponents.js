@@ -92,6 +92,13 @@ export class SlideshowComponent extends Component {
 }
 
 export class TableComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state={
+			up: true
+		}
+	}
+
   render(){
   	const source = this.props.source;
     return(
@@ -107,10 +114,11 @@ export class TableComponent extends Component {
 	          </div>
 	        }
 		      <h4><Row classname={ styles.header }>
-	          <Col md={ 2 }>{ source.leftTitle }</Col>
-				  	<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
-				  </Row></h4>
-				  { source.list.map( ( item, i ) =>
+			  	<Col md={ 2 } onClick={ () => this.setState({ up: !this.state.up })}>{ source.leftTitle } <i class={ this.state.up ? "fa fa-sort-up" : "fa fa-sort-down" } style={ this.state.up ? { transform: "translateY(25%)" } : { transform: "translateY(-25%)" } } /></Col>
+				<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
+			  </Row></h4>
+			  <div style={ this.state.up ? { display: "flex", flexDirection: "column" } : { display: "flex", flexDirection: "column-reverse" } }>
+			  { source.list.map( ( item, i ) =>
 	          <Row key={ i } className={ styles.listItem }>
 		        	<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
 		        	<Col md={ 10 } className={ styles.right }>
@@ -119,7 +127,8 @@ export class TableComponent extends Component {
 						    ) }
 			    		</Col>
 	        	</Row>
-			    ) }
+				) }
+				</div>
 	      </div>
 	    </div>
     </div>
