@@ -15,7 +15,7 @@
     {
       "componentName": "AwardsComponent",
       "image": {
-        "src": "placeholder", 
+        "src": "hiremepwease-award", 
         "alt": "First Place Award"
       },
       "header": "Won First Place"
@@ -25,11 +25,43 @@
       "slideshow": [
         {
           "image": {
-            "src": "screenshot-hire-form",
-            "alt": "Hire Me Pwease Form"
+            "src": "hiremepwease-v1",
+            "alt": "Hire Me Pwease v1"
           },
-          "title": "Hire Me Pwease Form",
+          "title": "Hire Me Pwease v1",
+          "description": "Original version of Hire Me Pwease presented at Terrible Hack"
+        },
+        {
+          "image": {
+            "src": "hiremepwease-v2",
+            "alt": "Hire Me Pwease v2 Form"
+          },
+          "title": "Hire Me Pwease v2 Form",
           "description": "Homepage of Hire Me Pwease.<br />Takes in information to generate resume from."
+        },
+        {
+          "image": {
+            "src": "hiremepwease-v2-dark",
+            "alt": "Hire Me Pwease v2 Form (Dark mode)"
+          },
+          "title": "Hire Me Pwease v2 Form (Dark mode)",
+          "description": "Dark version of Hire Me Pwease homepage."
+        },
+        {
+          "image": {
+            "src": "hiremepwease-v2-resume",
+            "alt": "Hire Me Pwease v2 Resume"
+          },
+          "title": "Hire Me Pwease v2 Resume",
+          "description": "Example resume generated"
+        },
+        {
+          "image": {
+            "src": "hiremepwease-v2-resume-dark",
+            "alt": "Hire Me Pwease v2 Resume (Dark mode)"
+          },
+          "title": "Hire Me Pwease v2 Resume (Dark mode)",
+          "description": "Dark version of generated resume"
         }
       ]
     },
@@ -40,6 +72,24 @@
       "leftTitle": "Date",
       "rightTitle": "Update Description",
       "list": [
+        {
+          "left": "18/09/2019", 
+          "right": [
+            "Converted completely to a React App",
+            "Downloads generated resume pdf",
+            "Stores all options in JSONs",
+            "Fake Nyan Cat loading screen",
+            "Randomized offset function",
+            "Added dark mode",
+            "FontAwesome icons"
+          ]
+        },
+        {
+          "left": "13/01/2019", 
+          "right": [
+            "Reconstruction begins"
+          ]
+        },
         {
           "left": "20/10/2018", 
           "right": [
