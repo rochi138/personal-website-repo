@@ -12,18 +12,18 @@
       "name": "personal-website-repo",
       "description": "Personal Website"
     },
-    { "link": "Peekapak",
-      "image": "peekapak-logo",
-      "alt": "Peekapak Logo",
-      "name": "Peekapak Lessons",
-      "description": "Frontend Co-op"
-    },
   	{ "link": "HireMePwease",
   		"image": "halp",
   		"alt": "Then Perish meme cat",
   		"name": "Hire Me Pwease",
   		"description": "Terrible Resume Generator"
   	},
+    { "link": "Peekapak",
+      "image": "peekapak-logo",
+      "alt": "Peekapak Logo",
+      "name": "Peekapak Lessons",
+      "description": "Frontend Co-op"
+    },
   	{ "link": "FowlPlay",
   		"image": "fowlPlayThumbnail",
   		"alt": "FowlPlay Thumbnail",
