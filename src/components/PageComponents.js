@@ -11,6 +11,9 @@ export class ProjectSummary extends Component {
 				<h1>{ source.projectName }</h1>
 				<h3>{ source.tagline }</h3>
 				<h4>{ source.type }</h4>
+				{ source.link && 
+					<a href={ source.link }><button className="btn btn-primary">Test out project!</button></a>
+				}
 				<div className={ styles.summary } dangerouslySetInnerHTML={ { __html: source.summary } } />
 			</div>
 		)
