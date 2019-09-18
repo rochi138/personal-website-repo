@@ -17,7 +17,7 @@ export default class Header extends Component{
     if ( isMobile ) this.mobileToggle();
     if ( id === 'home' ) this.props.history.push('/');
     if ( !document.getElementById( id ) ) return null;
-    document.getElementById( id ).scrollIntoView();
+    document.getElementById( id ).scrollIntoView({ behavior: "smooth" });
   }
 
   componentDidMount() {
