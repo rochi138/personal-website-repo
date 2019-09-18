@@ -113,9 +113,12 @@
         { 
           "left": "Robyn Ching",
           "right": [
+            "Converted webpage to React app",
+            "Added fake loading screen",
             "Created the resume template.",
-            "Created content for the randomized hobbies.",
-            "Implemented ability to download webpage as pdf."
+            "Draws information from JSONs",
+            "Implemented ability to download webpage as pdf.",
+            "Added dark mode"
           ]
         },
         { 
@@ -129,6 +132,12 @@
           "left": "Sabrina Yu",
           "right": [
             "Created the form to take in user data."
+          ]
+        },
+        { 
+          "left": "<a href=\"https://www.youtube.com/channel/UC3VHfy8e1jbDnT5TG2pjP1w\" target=\"_blank\" rel=\"noopener noreferrer\">saraj00n/Means TV</a>",
+          "right": [
+            "Creater/Owner of <a href=\"https://www.youtube.com/watch?v=QH2-TGUlwu4\" target=\"_blank\" rel=\"noopener noreferrer\">Nyan Cat</a>."
           ]
         }
       ]
