@@ -130,7 +130,7 @@
       "componentName": "ListComponent",
       "title": "Future Features",
       "list": [
-        "HTML<ul><li>Spinner</li><li>Default fonts</li><li>Font Awesome Icons</li></ul>",
+        "HTML<ul><li>Spinner</li><li>Default fonts</li></ul>",
         "Enable e-mailing ability",
         "Templating<ul><li>Dark mode</li></ul>",
         "Project arrows (go left and right through all projects)",
