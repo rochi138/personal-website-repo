@@ -59,6 +59,14 @@ export default class Header extends Component{
               <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'interests' ) }><i class="fa fa-heart" /> INTERESTS</div>
             </div>
           }
+          <div className="container">
+              { this.props.state.theme === "default" 
+                  ? <div className="theme-dark">
+                      <div className="app-container">
+                          <button className="button" onClick={ () => this.props.setState({ theme: "dark" })}>Dark Mode</button></div></div>
+                  : <div className="theme-default"><div className="app-container"><button className="button" onClick={ () => this.props.setState({ theme: "default" })}>Default</button></div></div>
+              }
+          </div>
         </div>
         <div className={ `${ styles.bar } ${ styles.mobile }` } id="navDemo">
           <div className={ styles.barItem } onClick={ () => this.mobileToggle() }>
