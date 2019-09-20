@@ -122,7 +122,7 @@
           ]
         },
         { 
-          "left": "Amy Lu",
+          "left": "<a href=\"https://mensshi.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Amy Lu</a>",
           "right": [
             "Set up PHP to transfer data between form and resume.",
             "Created off-set function."
