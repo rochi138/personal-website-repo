@@ -16,6 +16,7 @@
 .app-container {
   @include themify($themes) {
     color: themed('textColor');
+    background-color: themed('backgroundColor');
   }
 
   .title {
