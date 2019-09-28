@@ -46,9 +46,9 @@ export default class Home extends Component{
     //Animations are missing
     //Can use modal (from previous versions) in project pages
     return(
-      <MainLayout isHome={ true } {...this.props } >
-        <div className={ "app-defaults theme-" + this.props.state.theme }>
-          <div className="app-container">
+      <div className={ "app-defaults theme-" + this.props.state.theme }>
+        <div className="app-container">
+          <MainLayout isHome={ true } {...this.props } >
             <div>
               <div className={ `${ stylesHome.parallax } ${ stylesHome.bannerPic }` } id="home">
                 <div className={ stylesHome.displayMiddle } >
@@ -162,9 +162,9 @@ export default class Home extends Component{
                 </div>
               </div>
             </div>
-          </div>
+          </MainLayout>
         </div>
-      </MainLayout>
+      </div>
     );
   }
 }

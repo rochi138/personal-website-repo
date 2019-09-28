@@ -32,11 +32,11 @@ export default class Header extends Component{
     var navBar = document.getElementById("myNavbar");
     var navDemo = document.getElementById("navDemo");
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-          navBar.className = `${ styles.bar } ${ styles.desktop } ${ styles.scroll }`;
-          navDemo.className = `${ styles.bar } ${ styles.mobile } ${ styles.scroll }`;
+          navBar.className = `${ styles.bar } ${ styles.desktop }` + " scroll";
+          navDemo.className = `${ styles.bar } ${ styles.mobile }` + " scroll";
       } else {
-          navBar.className = `${ styles.bar } ${ styles.desktop }`;
-          navDemo.className = `${ styles.bar } ${ styles.mobile }`;
+          navBar.className = `${ styles.bar } ${ styles.desktop }` + " noScroll";
+          navDemo.className = `${ styles.bar } ${ styles.mobile }` + " noScroll";
       }
   }
 
@@ -50,7 +50,7 @@ export default class Header extends Component{
     return(
       <div className={ styles.header }>
         <div className={ `${ styles.bar } ${ styles.desktop }` } id="myNavbar">
-          <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'home' ) }>HOME</div>
+          <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'home' ) }><i class="fa fa-home" /> HOME</div>
           { this.props.isHome &&
             <div> 
               <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'about' ) }><i class="fa fa-user" /> ABOUT</div>
@@ -59,35 +59,32 @@ export default class Header extends Component{
               <div className={ styles.barItem } onClick={ () => this.handleOnClick( false, 'interests' ) }><i class="fa fa-heart" /> INTERESTS</div>
             </div>
           }
-          <div className="container">
-              { this.props.state.theme === "default" 
-                  ? <div className="theme-dark">
-                      <div className="app-container">
-                          <button className="button" onClick={ () => this.props.setState({ theme: "dark" })}>Dark Mode</button></div></div>
-                  : <div className="theme-default"><div className="app-container"><button className="button" onClick={ () => this.props.setState({ theme: "default" })}>Default</button></div></div>
-              }
-          </div>
-        </div>
-        <div className={ `${ styles.bar } ${ styles.mobile }` } id="navDemo">
-          <div className={ styles.barItem } onClick={ () => this.mobileToggle() }>
-            <i class="fa fa-bars"/>ROBYN CHING
-          </div>
-          { ( this.state.open ) &&
-            <div>
-              { ( this.props.isHome ) ?
-                <div>
-                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'about' ) }>ABOUT</div>
-                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'projects' ) }>PROJECTS</div>
-                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'contact' ) }>CONTACT</div>
-                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'contact' ) }>INTERESTS</div>
-                </div> :
-                <div> 
-                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'home' ) }>HOME</div>
-                </div>
-              }
-            </div>
+          <div style={{flex: 1}} />
+          { this.props.state.theme === "default"
+            ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK MODE</div>
+            : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> DEFAULT</div>
           }
         </div>
+        <div className={ `${ styles.bar } ${ styles.mobile }` } id="navDemo">
+        <div className={ styles.barItem } onClick={ () => this.mobileToggle() }>
+          <i class="fa fa-bars"/>ROBYN CHING
+        </div>
+        { ( this.state.open ) &&
+          <div>
+            { ( this.props.isHome ) ?
+              <div>
+                <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'about' ) }>ABOUT</div>
+                <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'projects' ) }>PROJECTS</div>
+                <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'contact' ) }>CONTACT</div>
+                <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'contact' ) }>INTERESTS</div>
+              </div> :
+              <div> 
+                <div className={ styles.barItem } onClick={ () => this.handleOnClick( true, 'home' ) }>HOME</div>
+              </div>
+            }
+          </div>
+        }
+      </div>
       </div>
     )
   }

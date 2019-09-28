@@ -1,12 +1,16 @@
 $themes: (
   dark: (
     backgroundColor: 	#262626,
-    textColor: #ddd,
+    textColor: #dddddd,
     buttonTextColor: #aaa,
     buttonTextTransform: uppercase,
     buttonTextHoverColor: #ddd,
     buttonColor: #333,
     buttonBorder: 1px solid #aaa,
+    headerBackgroundColor: black
+  ),
+  default: (
+    headerBackgroundColor: #fff
   ),
 );
 
