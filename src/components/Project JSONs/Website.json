@@ -48,7 +48,7 @@
       "rightTitle": "Update Description",
       "list": [
       {
-        "left": "15/01/2019", 
+        "left": "2019/01/15", 
         "right": [
           "Complete overhaul of website complete",
           "Website is in a presentable and stable state. More features will be added in the future (see Future Features)",
@@ -57,14 +57,14 @@
         ]
       },
       {
-        "left": "26/11/2018", 
+        "left": "2018/11/26", 
         "right": [
           "Complete overhaul of website begins.",
           "Due to newly gained experience and a better overall idea, website will be revamped to include new features, updated information and better software maintainability"
         ]
       },
       {
-        "left": "07/05/2018", 
+        "left": "2018/05/07", 
         "right": [
           "Site was created for co-op applications.",
           "Copied <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Parallex Template</a> from <a href=\"https://www.w3schools.com/\" target=\"_blank\" rel=\"noopener noreferrer\">W3Schools</a>.",

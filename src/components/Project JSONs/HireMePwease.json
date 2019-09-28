@@ -73,7 +73,7 @@
       "rightTitle": "Update Description",
       "list": [
         {
-          "left": "18/09/2019", 
+          "left": "2019/09/18", 
           "right": [
             "Converted completely to a React App",
             "Downloads generated resume pdf",
@@ -85,13 +85,13 @@
           ]
         },
         {
-          "left": "13/01/2019", 
+          "left": "2019/01/13", 
           "right": [
             "Reconstruction begins"
           ]
         },
         {
-          "left": "20/10/2018", 
+          "left": "2018/10/20", 
           "right": [
             "Site form is created",
             "Site uses PHP",
