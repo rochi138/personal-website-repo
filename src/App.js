@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './SCSS/App.scss';
 import Home from './pages/HomePage';
-import ProjectPage from './components/ProjectPage';
+import ProjectPage from './pages/ProjectPage';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +11,8 @@ class App extends Component {
 		this.state={
 			theme: "default"
 		}
-	}
+  }
+
   render() {
     return (
       <div>

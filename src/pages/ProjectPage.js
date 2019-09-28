@@ -16,7 +16,7 @@ export default class ProjectPage extends Component{
     super( props );
 
     this.state ={
-      pageMeta: require('../pages/' + this.props.fileName + '.json')
+      pageMeta: require('../components/Project JSONs/' + this.props.fileName + '.json')
     }
   }
 
