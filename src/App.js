@@ -11,6 +11,7 @@ class App extends Component {
 
 		this.state={
       theme: "default",
+      projectList: []
 		}
   }
 
@@ -19,14 +20,14 @@ class App extends Component {
     ProjectList.map(( i ) => {
       var pageMeta = require('./components/Project JSONs/' + i + '.json');
       var date = "";
-      if ( pageMeta.work )
-        date = pageMeta.work.date;
+      if ( pageMeta.thumbnail.date )
+        date = pageMeta.thumbnail.date;
       else
         pageMeta.components.map((i) => {
           if ( i.title == "Progress" )
             date = i.list[0].left;
         })
-      rawProjectList.push({ projectName: i, date: date })
+      rawProjectList.push({ projectName: i, thumbnail: { ...pageMeta.thumbnail, date: date } })
     })
     var projectList=[ rawProjectList[0] ];
     const rlength = rawProjectList.length;
@@ -34,7 +35,7 @@ class App extends Component {
       const length = projectList.length;
       var added = false;
       for ( var ii = 0; ii < length; ++ii ){
-        if ( rawProjectList[ i ].date > projectList[ ii ].date ){
+        if ( rawProjectList[ i ].thumbnail.date > projectList[ ii ].thumbnail.date ){
           projectList.splice(ii, 0, rawProjectList[ i ] )
           added = true;
           break;
@@ -42,14 +43,15 @@ class App extends Component {
       }
       if ( !added ) projectList.push(rawProjectList[ i ])
     }
+    this.setState({ projectList: projectList });
   }
 
   render() {
     return (
       <div>
         <Route exact path='/' render={(props) => <Home state={this.state} {...props} setState={ (state) => this.setState( state ) }/>} />
-        { ProjectList.map((i) => 
-          <Route path={ '/'+ i } key={i} render={(props) => <ProjectPage fileName={i} state={this.state} {...props} setState={ (state) => this.setState( state ) } />} />
+        { this.state.projectList.map((project, i) => 
+          <Route path={ '/'+ project.projectName } key={i} render={(props) => <ProjectPage fileName={project.projectName} state={this.state} i={ i } {...props} setState={ (state) => this.setState( state ) } />} />
         )}
       </div>
     );

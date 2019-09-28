@@ -12,6 +12,7 @@ export class MainLayout extends Component{
   handleTop() {
     document.getElementById('main').scrollIntoView({ behavior: "smooth" });
   }
+
   render(){
     var index = window.location.href.indexOf("#page");
     if ( index !== -1 )

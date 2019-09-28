@@ -1,4 +1,10 @@
 {
+  "thumbnail": {
+    "image": "halp",
+    "alt": "Then Perish meme cat",
+    "name": "Hire Me Pwease",
+    "description": "Terrible Resume Generator"
+  },
   "components": [
     {
       "componentName": "ProjectSummary",

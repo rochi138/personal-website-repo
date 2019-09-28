@@ -1,4 +1,10 @@
 {
+  "thumbnail": {
+    "image": "fowlPlayThumbnail",
+    "alt": "FowlPlay Thumbnail",
+    "name": "FowlPlay",
+    "description": "2D Platform Game"
+  },
   "components": [
     {
       "componentName": "ProjectSummary",

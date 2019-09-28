@@ -8,11 +8,7 @@ export default class Home extends Component{
     super();
 
     var source=require('./HomePage.json');
-
-    if ( source.projects.length > 6 ) {
-      source.projectsMore= source.projects.slice( 6, source.projects.length );
-      source.projects= source.projects.slice( 0, 6 );
-    }
+    source.projects = [];
 
     this.state={
       source: source,
@@ -34,6 +30,19 @@ export default class Home extends Component{
     this.setState(prevState => ({ 
       ["show"+id]: !prevState["show"+id]
     }));
+  }
+
+  componentDidUpdate( prevProps ) {
+    if ( !prevProps.state.projectList.length ){
+      var source = this.state.source;
+      if ( this.props.state.projectList.length > 6 ) {
+        source.projectsMore= this.props.state.projectList.slice( 6, this.props.state.projectList.length );
+        source.projects= this.props.state.projectList.slice( 0, 6 );
+      } else {
+        source.projects = this.props.state.projectList;
+      }
+      this.setState({source: source})
+    }
   }
 
   render(){
@@ -86,14 +95,14 @@ export default class Home extends Component{
             <div className={ stylesHome.subTitle }>Previous work and personal projects.<br /> Click for the project's page</div>
             <Row>
               { source.projects.map( ( project, i ) =>
-                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) } onMouseEnter={ () => this.setState({ hoverProject: i })} onMouseLeave={ () => this.setState({ hoverProject: undefined })} style={ ( this.state.hoverProject !== undefined && i!== this.state.hoverProject ) ? {opacity: 0.4, cursor: "pointer"} : {opacity: 1, cursor: "pointer"}}>
+                <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.projectName ) } onMouseEnter={ () => this.setState({ hoverProject: i })} onMouseLeave={ () => this.setState({ hoverProject: undefined })} style={ ( this.state.hoverProject !== undefined && i!== this.state.hoverProject ) ? {opacity: 0.4, cursor: "pointer"} : {opacity: 1, cursor: "pointer"}}>
                   <div style={{height: "16em", width: "100%", textAlign: "center"}} >
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
-                    <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
+                    <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.thumbnail.alt } />
                   </div>
                   <div style={{height: "5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
-                    <h4>{ project.name }</h4>
-                    <p>{ project.description }</p>
+                    <h4>{ project.thumbnail.name }</h4>
+                    <p style={{textAlign: "center"}}>{ project.thumbnail.description }<br />{ project.thumbnail.date }</p>
                   </div>
                 </Col>
               ) }
@@ -101,11 +110,11 @@ export default class Home extends Component{
                 <Col sm={ 6 } md={ 4 } key={ i } onClick={ () => this.props.history.push( '/' + project.link ) }>
                   <div style={{height: "16em", width: "100%", textAlign: "center"}} >
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
-                    <img src={ require('../images/' + project.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.alt } />
+                    <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.thumbnail.alt } />
                   </div>
                   <div style={{height: "5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
-                    <h4>{ project.name }</h4>
-                    <p>{ project.description }</p>
+                    <h4>{ project.thumbnail.name }</h4>
+                    <p style={{textAlign: "center"}}>{ project.thumbnail.description }<br />{ project.thumbnail.date }</p>
                   </div>
                 </Col>
               ) }

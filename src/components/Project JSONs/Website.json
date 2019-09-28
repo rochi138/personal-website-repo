@@ -1,4 +1,10 @@
 {
+  "thumbnail": {
+    "image": "react-js",
+    "alt": "React JS Logo",
+    "name": "personal-website-repo",
+    "description": "Personal Website"
+  },
   "components": [
     {
       "componentName": "ProjectSummary",
@@ -48,6 +54,17 @@
       "rightTitle": "Update Description",
       "list": [
       {
+        "left": "2019/09/28", 
+        "right": [
+          "<b>Automated Project Addition:</b>",
+          "<ul><li>Draws project names from array in Constants.js and automatically generates URLs</li><li>Sorts projects by latest update date and displays them in that order.</li><li>Allows slideshow navigation through projects</li></ul>",
+          "Completely redesigned desktop and mobile header",
+          "<ul><li><b>Project Slideshow:</b> (go left and right through all projects)</li><li>Overall better navigation</li></ul>",
+          "Enabled dark mode",
+          "Added Fontawesome icons"
+        ]
+      },
+      {
         "left": "2019/01/15", 
         "right": [
           "Complete overhaul of website complete",
@@ -84,9 +101,7 @@
           "right": [
             "User Interface",
             "React.js",
-            "Bootstrap",
-            "SCSS",
-            "HTML"
+            "SCSS"
           ]
         },
         { 
@@ -132,8 +147,6 @@
       "list": [
         "HTML<ul><li>Spinner</li><li>Default fonts</li></ul>",
         "Enable e-mailing ability",
-        "Project arrows (go left and right through all projects)",
-        "Draws all files and sorts them by latest update date. Displays them in that order.",
         "JSON Editor<ul><li>use draft-js</li><li>can create new JSON file</li><li>can load current JSON file</li><li>can edit current JSON file</li><li>can save edited JSON file</li><li>can use calendar import to fill in dates</li></ul>"
       ]
     },

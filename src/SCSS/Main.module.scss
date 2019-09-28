@@ -44,6 +44,13 @@
 			&:hover {
 				background-color: #ccc;
 			}
+			
+			img{
+				height: 100%;
+				width: 30px;
+				vertical-align: middle;
+				object-fit: contain;
+			}
 		}
 
 		&:before, &:after {
@@ -64,7 +71,7 @@
 		@media screen and (max-width: 800px) {
 	    display: none;
 	  }
-	  flex-direction: row;
+	  flex-direction: column;
 	  width:100%;
 	}
 }

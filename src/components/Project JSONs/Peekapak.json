@@ -1,5 +1,9 @@
 {
-  "work": {
+  "thumbnail": {
+    "image": "peekapak-logo",
+    "alt": "Peekapak Logo",
+    "name": "Peekapak Lessons",
+    "description": "Frontend Co-op",
     "date": "2018/12/21"
   },
   "components": [
