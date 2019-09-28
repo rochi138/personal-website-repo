@@ -17,16 +17,18 @@ export class MainLayout extends Component{
     if ( index !== -1 )
       this.props.history.push( '/' + window.location.href.slice( index + 5 ) )
     return(
-      <div className='main' id='main'>
-        <Header {...this.props} />
-        { React.Children.map( this.props.children, child =>
-            React.cloneElement( child ),
-          )
-        }
-        <div className={ styles.toTop } onClick={ () => this.handleTop() }>
-          <i class="fas fa-angle-double-up" />
+      <div className={ "app-defaults theme-" + this.props.state.theme } id="main">
+        <div className="app-container">
+          <Header {...this.props} />
+          { React.Children.map( this.props.children, child =>
+              React.cloneElement( child ),
+            )
+          }
+          <div className={ styles.toTop } onClick={ () => this.handleTop() }>
+            <i class="fas fa-angle-double-up" />
+          </div>
+          <Footer {...this.props} />
         </div>
-        <Footer {...this.props} />
       </div>
       );
   }
