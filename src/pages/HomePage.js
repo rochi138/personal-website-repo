@@ -100,7 +100,7 @@ export default class Home extends Component{
                     <span style={{height: "100%", display: "inline-block", verticalAlign: "middle"}}></span>
                     <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } style={{width: "90%", height: "100%", verticalAlign: "middle", objectFit: "contain"}} alt={ project.thumbnail.alt } />
                   </div>
-                  <div style={{height: "5em", display: "flex", flexDirection: "column", alignItems: "center"}} >
+                  <div style={{height: "5em", display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "0.5em"}} >
                     <h4>{ project.thumbnail.name }</h4>
                     <p style={{textAlign: "center"}}>{ project.thumbnail.description }<br />{ project.thumbnail.date }</p>
                   </div>
