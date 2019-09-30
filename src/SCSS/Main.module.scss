@@ -21,6 +21,7 @@
 		display: flex;
 		overflow:hidden;
 		white-space:normal;
+		flex-wrap: wrap;
 
 		.barItem {
 			padding:8px 16px;
@@ -78,8 +79,9 @@
 
 .projectSummary {
 	text-align: center; 
-	margin-top: 5em;
+	margin-top: 2.5em;
 	overflow-wrap: break-word;
+	padding-top: 2.5em;
 
 	.summary {
 		text-align: left;
