@@ -90,12 +90,12 @@ export default class Header extends Component{
               { this.state.projectOpen && 
                 <div style={{display: "flex", flexDirection: "row"}}>
                   { this.state.projectList.map((project, i) => 
-                    <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } style={{color: "inherit"}}>
+                    <div onClick={ () => this.props.history.push( "/#page" + project.projectName ) } style={{color: "inherit"}}>
                       <div className={ styles.barItem }>
                         <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
                         {project.thumbnail.name}
                       </div>
-                    </a>
+                    </div>
                   )}
                 </div>
               }
@@ -142,12 +142,12 @@ export default class Header extends Component{
               { this.state.projectOpen && 
                 <div className={ styles.bar }> 
                   { this.state.projectList.map((project, i) => 
-                    <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } style={{color: "inherit"}}>
+                    <div onClick={ () => this.props.history.push( "/#page" + project.projectName ) } style={{color: "inherit"}}>
                       <div className={ styles.barItem }>
                         <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
                         {project.thumbnail.name}
                       </div>
-                    </a>
+                    </div>
                   )}
                 </div>
               }
