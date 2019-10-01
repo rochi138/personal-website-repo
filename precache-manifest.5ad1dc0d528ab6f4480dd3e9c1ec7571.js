@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "e1a4d4ac65f07403ba5781b206c0adef",
-    "url": "/personal-website-repo/static/media/fowlPlay-awards-feels.e1a4d4ac.jpg"
+    "revision": "0b6db91cc3f0db2f483eb1f86bb7d61b",
+    "url": "/personal-website-repo/static/media/hiremepwease-loading.0b6db91c.jpg"
   },
   {
-    "revision": "3e22553fa4f710c0465f",
-    "url": "/personal-website-repo/static/css/main.7def3b06.chunk.css"
+    "revision": "07fad5554029e7d18ca9",
+    "url": "/personal-website-repo/static/css/main.842f4d47.chunk.css"
   },
   {
-    "revision": "e60fd5063f8d335e0992aa7058b9cde2",
-    "url": "/personal-website-repo/static/media/screenshot-website-json.e60fd506.jpg"
+    "revision": "75b2dd13e1fd4f8f4b73",
+    "url": "/personal-website-repo/static/js/runtime~main.d676354c.js"
   },
   {
-    "revision": "a0ccaaa9c17a4bc16c78",
-    "url": "/personal-website-repo/static/js/1.a0ccaaa9.chunk.js"
+    "revision": "335b04d2c3d85998263aa4b3aeb03b8e",
+    "url": "/personal-website-repo/static/media/robynProfile2.335b04d2.JPG"
   },
   {
-    "revision": "831399e47b98b43e8ac4",
-    "url": "/personal-website-repo/static/js/runtime~main.831399e4.js"
+    "revision": "ae015629f52882b021a9",
+    "url": "/personal-website-repo/static/js/2.9b968e95.chunk.js"
   },
   {
     "revision": "53e40081c783d1e71bc05f1d752288fe",
@@ -34,10 +34,6 @@ self.__precacheManifest = [
   {
     "revision": "863da0ee77c95c38d5627146cf75a5af",
     "url": "/personal-website-repo/static/media/robynInterests.863da0ee.jpg"
-  },
-  {
-    "revision": "335b04d2c3d85998263aa4b3aeb03b8e",
-    "url": "/personal-website-repo/static/media/robynProfile2.335b04d2.JPG"
   },
   {
     "revision": "1c96ddcd7e5c806ef98ddc5dfa1fd41f",
@@ -60,8 +56,8 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/PublisherSubunit.adb5c45a.jpg"
   },
   {
-    "revision": "3e22553fa4f710c0465f",
-    "url": "/personal-website-repo/static/js/main.3e22553f.chunk.js"
+    "revision": "e1a4d4ac65f07403ba5781b206c0adef",
+    "url": "/personal-website-repo/static/media/fowlPlay-awards-feels.e1a4d4ac.jpg"
   },
   {
     "revision": "bb211f66f4b6f2ba12086b51c93f75ef",
@@ -74,6 +70,34 @@ self.__precacheManifest = [
   {
     "revision": "e61b9980e4aab4d33927f48144c120aa",
     "url": "/personal-website-repo/static/media/halp.e61b9980.jpg"
+  },
+  {
+    "revision": "25d555c4eeabf5b8a12b288f64a04b1e",
+    "url": "/personal-website-repo/static/media/hiremepwease-award.25d555c4.jpg"
+  },
+  {
+    "revision": "07fad5554029e7d18ca9",
+    "url": "/personal-website-repo/static/js/main.5e5f3899.chunk.js"
+  },
+  {
+    "revision": "6aa7d783f97693de67bb899eb8efa619",
+    "url": "/personal-website-repo/static/media/hiremepwease-v1.6aa7d783.jpg"
+  },
+  {
+    "revision": "9a7daa668d7670563faf3d31488a5a10",
+    "url": "/personal-website-repo/static/media/hiremepwease-v2-dark.9a7daa66.jpg"
+  },
+  {
+    "revision": "89dcf91142436ab40d19a37e0cdc2539",
+    "url": "/personal-website-repo/static/media/hiremepwease-v2-resume-dark.89dcf911.jpg"
+  },
+  {
+    "revision": "880ddbf8fd2243bf7c97e4c9227aefca",
+    "url": "/personal-website-repo/static/media/hiremepwease-v2-resume.880ddbf8.jpg"
+  },
+  {
+    "revision": "49b6abf1a844e4e56b0dc424f42b0611",
+    "url": "/personal-website-repo/static/media/hiremepwease-v2.49b6abf1.jpg"
   },
   {
     "revision": "eefab697ac811fcab12be573a3ad02f7",
@@ -116,11 +140,15 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/screenshot-projectpages-js.4c7a8c37.jpg"
   },
   {
-    "revision": "a0ccaaa9c17a4bc16c78",
-    "url": "/personal-website-repo/static/css/1.60ae8a3f.chunk.css"
+    "revision": "e60fd5063f8d335e0992aa7058b9cde2",
+    "url": "/personal-website-repo/static/media/screenshot-website-json.e60fd506.jpg"
   },
   {
-    "revision": "402240245f8ee83c87b6a5adf002e191",
+    "revision": "ae015629f52882b021a9",
+    "url": "/personal-website-repo/static/css/2.f9d3549d.chunk.css"
+  },
+  {
+    "revision": "04eae86281641e55d9bfabc1ea3b477c",
     "url": "/personal-website-repo/index.html"
   }
 ];
