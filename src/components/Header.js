@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from '../SCSS/Main.module.scss';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export default class Header extends Component{
   constructor( props ) {
@@ -35,18 +34,18 @@ export default class Header extends Component{
     var navBar = document.getElementById("myNavbar");
     var navDemo = document.getElementById("navDemo");
       if ( !document.body.scrollTop || !document.documentElement.scrollTop ) {
-          navBar.className = `${ styles.bar } ${ styles.desktop }` + " scroll";
-          navDemo.className = `${ styles.bar } ${ styles.mobile }` + " scroll";
+          navBar.className = `${ styles.bar } ${ styles.desktop } scroll`;
+          navDemo.className = `${ styles.bar } ${ styles.mobile } scroll`;
       } else {
-          navBar.className = `${ styles.bar } ${ styles.desktop }` + " noScroll";
-          navDemo.className = `${ styles.bar } ${ styles.mobile }` + " noScroll";
+          navBar.className = `${ styles.bar } ${ styles.desktop } noScroll`;
+          navDemo.className = `${ styles.bar } ${ styles.mobile } noScroll`;
       }
   }
 
   componentDidUpdate( prevProps ){
     if ( !prevProps.state.projectList.length ) 
       this.setState({projectList: this.props.state.projectList})
-    if ( prevProps.i != this.props.i )
+    if ( prevProps.i !== this.props.i )
       this.setState({i: this.props.i})
   }
 
@@ -57,7 +56,7 @@ export default class Header extends Component{
       //plz for the love of god resrtucture this
       <div className={ styles.header }>
         { this.props.isHome
-          ? <div className={ `${ styles.bar } ${ styles.desktop }` + " scroll" } id="myNavbar">
+          ? <div className={ `${ styles.bar } ${ styles.desktop } scroll` } id="myNavbar">
               <div style={{display: "flex", flexDirection: "row"}}>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /> HOME</div>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'about' ) }><i class="fa fa-user" /> ABOUT</div>
@@ -71,7 +70,7 @@ export default class Header extends Component{
                 }
               </div>
             </div>
-          : <div className={ `${ styles.bar } ${ styles.desktop }` + " scroll" } id="myNavbar">
+          : <div className={ `${ styles.bar } ${ styles.desktop } scroll` } id="myNavbar">
               <div style={{display: "flex", flexDirection: "row"}}>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /> HOME</div>
                 <div style={{flex: 1}} />
@@ -107,7 +106,7 @@ export default class Header extends Component{
             </div>
         }
         { this.props.isHome
-          ? <div className={ `${ styles.bar } ${ styles.mobile }` + " noScroll"} id="navDemo">
+          ? <div className={ `${ styles.bar } ${ styles.mobile } noScroll`} id="navDemo">
               <div className={ styles.bar }>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /></div>
                 <div className={ styles.barItem } style={{flex: 1}} onClick={ () => this.setState(prevState => ({mobileOpen: !prevState.mobileOpen })) }><i class={ this.state.open ? "fa fa-chevron-up" : "fa fa-chevron-down" }/></div>
@@ -127,7 +126,7 @@ export default class Header extends Component{
                 }
               </div>
             </div>
-          : <div className={ `${ styles.bar } ${ styles.mobile }` + " noScroll"} id="navDemo">
+          : <div className={ `${ styles.bar } ${ styles.mobile } noScroll`} id="navDemo">
               <div className={ styles.bar }>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /></div>
                 <div style={{flex: 1}} />

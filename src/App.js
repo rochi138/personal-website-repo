@@ -5,7 +5,7 @@ import Home from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
 import { ProjectList } from './components/Constants';
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
 		super();
 
@@ -17,14 +17,14 @@ class App extends Component {
 
   componentDidMount() {
     var rawProjectList = [];
-    ProjectList.map(( i ) => {
+    ProjectList.forEach( function( i ) {
       var pageMeta = require('./components/Project JSONs/' + i + '.json');
       var date = "";
       if ( pageMeta.thumbnail.date )
         date = pageMeta.thumbnail.date;
       else
-        pageMeta.components.map((i) => {
-          if ( i.title == "Progress" )
+        pageMeta.components.forEach( function( i ) {
+          if ( i.title === "Progress" )
             date = i.list[0].left;
         })
       rawProjectList.push({ projectName: i, thumbnail: { ...pageMeta.thumbnail, date: date } })
@@ -57,5 +57,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
