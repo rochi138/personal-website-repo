@@ -20,10 +20,12 @@ export default class Home extends Component{
     }
 
     this.readMore = this.readMore.bind( this );
+    this.getProjectList = this.getProjectList.bind( this );
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.getProjectList();
   }
 
   readMore( id ) {
@@ -33,16 +35,18 @@ export default class Home extends Component{
   }
 
   componentDidUpdate( prevProps ) {
-    if ( !prevProps.state.projectList.length ){
-      var source = this.state.source;
-      if ( this.props.state.projectList.length > 6 ) {
-        source.projectsMore= this.props.state.projectList.slice( 6, this.props.state.projectList.length );
-        source.projects= this.props.state.projectList.slice( 0, 6 );
-      } else {
-        source.projects = this.props.state.projectList;
-      }
-      this.setState({source: source})
-    }
+    if ( !prevProps.state.projectList.length )
+      this.getProjectList();
+  }
+
+  getProjectList() {
+    var source = this.state.source;
+    if ( this.props.state.projectList.length > 6 ) {
+      source.projectsMore= this.props.state.projectList.slice( 6, this.props.state.projectList.length );
+      source.projects= this.props.state.projectList.slice( 0, 6 );
+    } else 
+      source.projects = this.props.state.projectList;
+    this.setState({source: source})
   }
 
   render(){
