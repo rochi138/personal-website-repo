@@ -65,7 +65,7 @@ export default class Header extends Component{
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'interests' ) }><i class="fa fa-heart" /> INTERESTS</div>
                 <div style={{flex: 1}} />
                 { this.props.state.theme === "default"
-                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK MODE</div>
+                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK</div>
                   : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> DEFAULT</div>
                 }
               </div>
@@ -74,20 +74,16 @@ export default class Header extends Component{
               <div style={{display: "flex", flexDirection: "row"}}>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /> HOME</div>
                 <div style={{flex: 1}} />
-                { !first && 
-                  <a href={"https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i - 1 ].projectName } style={{color: "inherit"}}>
-                    <div className={ styles.barItem }><i class="fa fa-chevron-left" /></div>
-                  </a>
-                }
+                <a href={ first ? "" : "https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i - 1 ].projectName } style={ first ? { visibility: "hidden"} : {color: "inherit"}}>
+                  <div className={ styles.barItem }><i class="fa fa-chevron-left" /></div>
+                </a>
                 <div className={ styles.barItem } onClick={ () => this.setState(prevState => ({projectOpen: !prevState.projectOpen }))}><i class="fa fa-bars"/> PROJECT LIST</div>
-                { !last && 
-                  <a href={"https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i + 1 ].projectName } style={{color: "inherit"}}>
-                    <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
-                  </a>
-                }
+                <a href={ last ? "" : "https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i + 1 ].projectName } style={ last ? { visibility: "hidden"} : {color: "inherit"}}>
+                  <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
+                </a>
                 <div style={{flex: 1}} />
                 { this.props.state.theme === "default"
-                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK MODE</div>
+                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK</div>
                   : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> DEFAULT</div>
                 }
               </div>
@@ -130,17 +126,13 @@ export default class Header extends Component{
               <div className={ styles.bar }>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /></div>
                 <div style={{flex: 1}} />
-                { !first && 
-                  <a href={"https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i - 1 ].projectName } style={{color: "inherit"}}>
+                  <a href={ first ? "" : "https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i - 1 ].projectName } style={ first ? { visibility: "hidden"} : {color: "inherit"}}>
                     <div className={ styles.barItem }><i class="fa fa-chevron-left" /></div>
                   </a>
-                }
                 <div className={ styles.barItem } onClick={ () => this.setState(prevState => ({projectOpen: !prevState.projectOpen }))}><i class="fa fa-bars"/> PROJECT LIST</div>
-                { !last && 
-                  <a href={"https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i + 1 ].projectName } style={{color: "inherit"}}>
-                    <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
-                  </a>
-                }
+                <a href={ last ? "" : "https://rochi138.github.io/personal-website-repo#page" + this.state.projectList[ this.state.i + 1 ].projectName } style={ last ? { visibility: "hidden"} : {color: "inherit"}}>
+                  <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
+                </a>
                 <div style={{flex: 1}} />
                 { this.props.state.theme === "default"
                   ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> </div>
