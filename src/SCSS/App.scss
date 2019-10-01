@@ -4,10 +4,6 @@
   text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .app-container {
   @include themify($themes) {
     color: themed('textColor');
@@ -51,6 +47,12 @@
   label {
     @include themify($themes) {
       background-color: themed('backgroundColor');
+    }
+  }
+  
+  a {
+    @include themify($themes) {
+      color: themed('linkColor');
     }
   }
 }
