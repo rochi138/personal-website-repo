@@ -54,7 +54,7 @@ export default class Header extends Component{
     const last = !this.state.projectList[0] ? false : this.state.i === this.state.projectList.length -1;
     return(
       //plz for the love of god resrtucture this
-      <div className={ styles.header }>
+      <div className={ `${ styles.header } header` }>
         { this.props.isHome
           ? <div className={ `${ styles.bar } ${ styles.desktop } scroll` } id="myNavbar">
               <div style={{display: "flex", flexDirection: "row"}}>
@@ -90,7 +90,7 @@ export default class Header extends Component{
               { this.state.projectOpen && 
                 <div style={{display: "flex", flexDirection: "row"}}>
                   { this.state.projectList.map((project, i) => 
-                    <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } target="_blank" rel="noopener noreferrer" style={{color: "inherit"}}>
+                    <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } style={{color: "inherit"}}>
                       <div className={ styles.barItem }>
                         <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
                         {project.thumbnail.name}
@@ -142,7 +142,7 @@ export default class Header extends Component{
               { this.state.projectOpen && 
                 <div className={ styles.bar }> 
                   { this.state.projectList.map((project, i) => 
-                    <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } target="_blank" rel="noopener noreferrer" style={{color: "inherit"}}>
+                    <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } style={{color: "inherit"}}>
                       <div className={ styles.barItem }>
                         <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
                         {project.thumbnail.name}
