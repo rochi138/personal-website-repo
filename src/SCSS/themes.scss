@@ -7,10 +7,12 @@ $themes: (
     buttonTextHoverColor: #ddd,
     buttonColor: #333,
     buttonBorder: 1px solid #aaa,
-    headerBackgroundColor: black
+    headerBackgroundColor: black,
+    borderColor: 2px solid #dddddd,
   ),
   default: (
-    headerBackgroundColor: #fff
+    headerBackgroundColor: #fff,
+    borderColor: 2px solid #000000,
   ),
 );
 

@@ -71,3 +71,9 @@
 .noScroll {
   color: black;
 }
+
+.listItem {
+  @include themify($themes) {
+    border-top: themed('borderColor');
+  }
+}

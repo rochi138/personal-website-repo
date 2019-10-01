@@ -98,7 +98,7 @@ export default class Header extends Component{
                     <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } target="_blank" rel="noopener noreferrer" style={{color: "inherit"}}>
                       <div className={ styles.barItem }>
                         <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
-                        {project.projectName}
+                        {project.thumbnail.name}
                       </div>
                     </a>
                   )}
@@ -154,7 +154,7 @@ export default class Header extends Component{
                     <a href={"https://rochi138.github.io/personal-website-repo#page" + project.projectName } target="_blank" rel="noopener noreferrer" style={{color: "inherit"}}>
                       <div className={ styles.barItem }>
                         <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
-                        {project.projectName}
+                        {project.thumbnail.name}
                       </div>
                     </a>
                   )}
