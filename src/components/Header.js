@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../SCSS/Main.module.scss';
+import { HomePageSections } from './Constants';
 
 export default class Header extends Component{
   constructor( props ) {
@@ -59,10 +60,9 @@ export default class Header extends Component{
           ? <div className={ `${ styles.bar } ${ styles.desktop } scroll` } id="myNavbar">
               <div style={{display: "flex", flexDirection: "row"}}>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /> HOME</div>
-                <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'about' ) }><i class="fa fa-user" /> ABOUT</div>
-                <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'projects' ) }><i class="fa fa-th" /> PROJECTS</div>
-                <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'contact' ) }><i class="fa fa-envelope" /> CONTACT</div>
-                <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'interests' ) }><i class="fa fa-heart" /> INTERESTS</div>
+                { HomePageSections.map( ( section ) =>
+                  <div className={ styles.barItem } onClick={ () => this.handleOnClick( section.title ) }><i class={ section.icon } />{ section.title }</div>
+                ) }
                 <div style={{flex: 1}} />
                 { this.props.state.theme === "default"
                   ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK</div>
@@ -114,10 +114,9 @@ export default class Header extends Component{
               <div className={ styles.bar }>
                 { this.state.mobileOpen && 
                   <div> 
-                    <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'about' ) }><i class="fa fa-user" /> ABOUT</div>
-                    <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'projects' ) }><i class="fa fa-th" /> PROJECTS</div>
-                    <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'contact' ) }><i class="fa fa-envelope" /> CONTACT</div>
-                    <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'interests' ) }><i class="fa fa-heart" /> INTERESTS</div>
+                    { HomePageSections.map( ( section ) =>
+                      <div className={ styles.barItem } onClick={ () => this.handleOnClick( section.title ) }><i class={ section.icon } />{ section.title }</div>
+                    ) }
                   </div>
                 }
               </div>

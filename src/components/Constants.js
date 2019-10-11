@@ -4,3 +4,22 @@ export const ProjectList= [
     "HireMePwease",
     "FowlPlay"
 ]
+
+export const HomePageSections= [
+    {
+        title: "about",
+        icon: "fa fa-user"
+    },
+    {
+        title: "projects",
+        icon: "fa fa-th"
+    },
+    {
+        title: "contact",
+        icon: "fa fa-envelope"
+    },
+    {
+        title: "interests",
+        icon: "fa fa-heart"
+    }
+]
