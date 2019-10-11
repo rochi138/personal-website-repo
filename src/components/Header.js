@@ -64,10 +64,7 @@ export default class Header extends Component{
                   <div className={ styles.barItem } onClick={ () => this.handleOnClick( section.title ) }><i class={ section.icon } />{ section.title }</div>
                 ) }
                 <div style={{flex: 1}} />
-                { this.props.state.theme === "default"
-                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK</div>
-                  : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> DEFAULT</div>
-                }
+                <ThemeToggle theme={ this.props.state.theme } setState={ this.props.setState } />
               </div>
             </div>
           : <div className={ `${ styles.bar } ${ styles.desktop } scroll` } id="myNavbar">
@@ -82,10 +79,7 @@ export default class Header extends Component{
                   <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
                 </div>
                 <div style={{flex: 1}} />
-                { this.props.state.theme === "default"
-                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> DARK</div>
-                  : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> DEFAULT</div>
-                }
+                <ThemeToggle theme={ this.props.state.theme } setState={ this.props.setState } />
               </div>
               { this.state.projectOpen && 
                 <div style={{display: "flex", flexDirection: "row"}}>
@@ -106,10 +100,7 @@ export default class Header extends Component{
               <div className={ styles.bar }>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /></div>
                 <div className={ styles.barItem } style={{flex: 1}} onClick={ () => this.setState(prevState => ({mobileOpen: !prevState.mobileOpen })) }><i class={ this.state.open ? "fa fa-chevron-up" : "fa fa-chevron-down" }/></div>
-                { this.props.state.theme === "default"
-                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> </div>
-                  : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> </div>
-                }
+                <ThemeToggle theme={ this.props.state.theme } setState={ this.props.setState } isMobile={ true } />
               </div>
               <div className={ styles.bar }>
                 { this.state.mobileOpen && 
@@ -133,10 +124,7 @@ export default class Header extends Component{
                   <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
                 </div>
                 <div style={{flex: 1}} />
-                { this.props.state.theme === "default"
-                  ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" /> </div>
-                  : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" /> </div>
-                }
+                <ThemeToggle theme={ this.props.state.theme } setState={ this.props.setState } isMobile={ true } />
               </div>
               { this.state.projectOpen && 
                 <div className={ styles.bar }> 
@@ -152,6 +140,19 @@ export default class Header extends Component{
               }
           </div>
         }
+      </div>
+    )
+  }
+}
+
+class ThemeToggle extends Component {
+  render(){
+    return(
+      <div>
+        { this.props.theme === "default"
+          ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" />{ !this.props.isMobile && "DARK" }</div>
+          : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" />{ !this.props.isMobile && "DEFAULT" }</div>
+        }   
       </div>
     )
   }
