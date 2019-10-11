@@ -147,13 +147,8 @@ export default class Header extends Component{
 
 class ThemeToggle extends Component {
   render(){
-    return(
-      <div>
-        { this.props.theme === "default"
-          ? <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" />{ !this.props.isMobile && "DARK" }</div>
-          : <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" />{ !this.props.isMobile && "DEFAULT" }</div>
-        }   
-      </div>
-    )
+    if ( this.props.theme === "default" )
+      return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" />{ !this.props.isMobile && "DARK" }</div>)
+    return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" />{ !this.props.isMobile && "DEFAULT" }</div> )
   }
 }
