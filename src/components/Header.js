@@ -71,28 +71,11 @@ export default class Header extends Component{
               <div style={{display: "flex", flexDirection: "row"}}>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /> HOME</div>
                 <div style={{flex: 1}} />
-                <div onClick={ () => this.props.history.push( first ? "/" : ("#page" + this.state.projectList[ this.state.i - 1 ].projectName ) ) } style={ first ? { visibility: "hidden"} : {color: "inherit"}}>
-                  <div className={ styles.barItem }><i class="fa fa-chevron-left" /></div>
-                </div>
-                <div className={ styles.barItem } onClick={ () => this.setState(prevState => ({projectOpen: !prevState.projectOpen }))}><i class="fa fa-bars"/> PROJECT LIST</div>
-                <div onClick={ () => this.props.history.push( last ? "/" : ("#page" + this.state.projectList[ this.state.i + 1 ].projectName ) ) } style={ last ? { visibility: "hidden"} : {color: "inherit"}}>
-                  <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
-                </div>
+                <ProjectNav toggleProjectOpen={ () => this.setState({ projectOpen: !this.state.projectOpen })} history={ this.props.history } projectList={ this.state.projectList } i={ this.state.i } first={ first } last={ last } />
                 <div style={{flex: 1}} />
                 <ThemeToggle theme={ this.props.state.theme } setState={ this.props.setState } />
               </div>
-              { this.state.projectOpen && 
-                <div style={{display: "flex", flexDirection: "row"}}>
-                  { this.state.projectList.map((project, i) => 
-                    <div onClick={ () => this.props.history.push( "/#page" + project.projectName ) } style={{color: "inherit"}}>
-                      <div className={ styles.barItem }>
-                        <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
-                        {project.thumbnail.name}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              }
+              <ProjectOpen projectOpen={ this.state.projectOpen } history={ this.props.history } projectList={ this.state.projectList } />
             </div>
         }
         { this.props.isHome
@@ -116,28 +99,11 @@ export default class Header extends Component{
               <div className={ styles.bar }>
                 <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i class="fa fa-home" /></div>
                 <div style={{flex: 1}} />
-                <div onClick={ () => this.props.history.push( first ? "/" : ("#page" + this.state.projectList[ this.state.i - 1 ].projectName ) ) } style={ first ? { visibility: "hidden"} : {color: "inherit"}}>
-                  <div className={ styles.barItem }><i class="fa fa-chevron-left" /></div>
-                </div>
-                <div className={ styles.barItem } onClick={ () => this.setState(prevState => ({projectOpen: !prevState.projectOpen }))}><i class="fa fa-bars"/> PROJECT LIST</div>
-                <div onClick={ () => this.props.history.push( last ? "/" : ("#page" + this.state.projectList[ this.state.i + 1 ].projectName ) ) } style={ last ? { visibility: "hidden"} : {color: "inherit"}}>
-                  <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
-                </div>
+                <ProjectNav toggleProjectOpen={ () => this.setState({ projectOpen: !this.state.projectOpen })} history={ this.props.history } projectList={ this.state.projectList } i={ this.state.i } first={ first } last={ last } />
                 <div style={{flex: 1}} />
                 <ThemeToggle theme={ this.props.state.theme } setState={ this.props.setState } isMobile={ true } />
               </div>
-              { this.state.projectOpen && 
-                <div className={ styles.bar }> 
-                  { this.state.projectList.map((project, i) => 
-                    <div onClick={ () => this.props.history.push( "/#page" + project.projectName ) } style={{color: "inherit"}}>
-                      <div className={ styles.barItem }>
-                        <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
-                        {project.thumbnail.name}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              }
+              <ProjectOpen projectOpen={ this.state.projectOpen } history={ this.props.history } projectList={ this.state.projectList } />
           </div>
         }
       </div>
@@ -148,7 +114,40 @@ export default class Header extends Component{
 class ThemeToggle extends Component {
   render(){
     if ( this.props.theme === "default" )
-      return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" />{ !this.props.isMobile && "DARK" }</div>)
-    return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" />{ !this.props.isMobile && "DEFAULT" }</div> )
+      return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i class="fa fa-moon" />{ !this.props.isMobile && " DARK" }</div>)
+    return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i class="fa fa-sun" />{ !this.props.isMobile && " DEFAULT" }</div> )
+  }
+}
+
+class ProjectNav extends Component {
+  render(){
+    return(
+      <div style={{ display: "flex" }}>
+        <div onClick={ () => this.props.history.push( this.props.first ? "/" : ("#page" + this.props.projectList[ this.props.i - 1 ].projectName ) ) } style={ this.props.first ? { visibility: "hidden"} : {color: "inherit"}}>
+          <div className={ styles.barItem }><i class="fa fa-chevron-left" /></div>
+        </div>
+        <div className={ styles.barItem } onClick={ () => this.props.toggleProjectOpen() } ><i class="fa fa-bars"/> PROJECT LIST</div>
+        <div onClick={ () => this.props.history.push( this.props.last ? "/" : ("#page" + this.props.projectList[ this.props.i + 1 ].projectName ) ) } style={ this.props.last ? { visibility: "hidden"} : {color: "inherit"}}>
+          <div className={ styles.barItem }><i class="fa fa-chevron-right" /></div>
+        </div>
+      </div>
+    )
+  }
+}
+
+class ProjectOpen extends Component {
+  render() {
+    return(
+      <div className={ styles.projectOpen } style={ this.props.projectOpen ? {} : { display: "none"}}>
+        { this.props.projectList.map((project, i) => 
+          <div onClick={ () => this.props.history.push( "/#page" + project.projectName ) } style={{color: "inherit"}}>
+            <div className={ styles.barItem }>
+              <img src={ require('../images/' + project.thumbnail.image + '.jpg' ) } alt={ project.thumbnail.alt } />
+              {project.thumbnail.name}
+            </div>
+          </div>
+        )}
+      </div>
+    )
   }
 }

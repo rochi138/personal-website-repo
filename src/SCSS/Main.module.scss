@@ -64,6 +64,8 @@
 	    display: none;
 	  }
 	  flex-direction: column;
+
+	  .projectOpen { @extend .bar }
 	}
 
 	.desktop {
@@ -72,6 +74,11 @@
 	  }
 	  flex-direction: column;
 	  width:100%;
+
+	  .projectOpen {
+		display: flex;
+		flex-direction: row
+	  }
 	}
 }
 
