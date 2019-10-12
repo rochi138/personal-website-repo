@@ -26,7 +26,7 @@ export class MainLayout extends Component{
             )
           }
           <div className={ styles.toTop } onClick={ () => this.handleTop() }>
-            <i class="fas fa-angle-double-up" />
+            <i className="fas fa-angle-double-up" />
           </div>
           <Footer {...this.props} />
         </div>

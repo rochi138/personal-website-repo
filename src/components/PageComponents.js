@@ -7,7 +7,7 @@ export class ProjectSummary extends Component {
 		const source = this.props.source;
 		return (
 			<div className={ styles.projectSummary }>
-				<img src={ require('../images/' + source.image.src + '.jpg' ) } class="w3-round w3-image" alt={ source.image.alt } style={{objectFit: "contain", maxWidth: "400px", maxHeight: "500px" }} width="80%" height="80%" />
+				<img src={ require('../images/' + source.image.src + '.jpg' ) } alt={ source.image.alt } style={{objectFit: "contain", maxWidth: "400px", maxHeight: "500px" }} width="80%" height="80%" />
 				<h1>{ source.projectName }</h1>
 				<h3>{ source.tagline }</h3>
 				<h4>{ source.type }</h4>
@@ -113,7 +113,7 @@ export class TableComponent extends Component {
 	            <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a>
 	          </div>
 	        }
-		      <h4><Row classname={ styles.header }>
+		      <h4><Row className={ styles.header }>
 			  	<Col md={ 2 } onClick={ () => this.setState({ up: !this.state.up })}>{ source.leftTitle } <i class={ this.state.up ? "fa fa-sort-up" : "fa fa-sort-down" } style={ this.state.up ? { transform: "translateY(25%)" } : { transform: "translateY(-25%)" } } /></Col>
 				<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
 			  </Row></h4>

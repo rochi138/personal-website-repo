@@ -87,7 +87,7 @@ class AboutSection extends Component {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div style={{ textAlign: "left", marginBottom: "1em" }} dangerouslySetInnerHTML={ { __html: this.props.text } }/>
             <Button style={{ backgroundColor:"black", marginTop: "10px" }}>
-            <a class="w3-button w3-padding-large w3-light-grey" style={{marginTop: "64px", color: "white" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202019%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet?<br />Take a quick look!</a>
+            <a style={{marginTop: "64px", color: "white" }} href="https://github.com/rochi138/personal-website-repo/raw/master/src/documents/Robyn%20Ching%20-%20Resume%202019%20Co-op.pdf" target="_blank" rel="noopener noreferrer">Haven't seen my resume yet?<br />Take a quick look!</a>
           </Button>
           </div>
         </div>
@@ -172,9 +172,9 @@ class ContactSection extends Component {
       <div className={ stylesHome.sectionContainer} id="contact">
         <h3>Question? Comments? Concerns?</h3>
         <div className={ stylesHome.subTitle }>Let me know and I'll get back to you!</div>
-        <div class="w3-row w3-padding-32 w3-section" id="div-container">
-          <div class="w3-large w3-margin-bottom w3-center" style={ { textAlign: "center" }}>
-            <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: rjching@uwaterloo.ca<br />
+        <div id="div-container">
+          <div style={ { textAlign: "center" }}>
+            <i className="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: rjching@uwaterloo.ca<br />
           </div>
         </div>
       </div>
@@ -205,7 +205,7 @@ class InterestsSection extends Component {
             ) }
           </div>
           <div className={ stylesHome.openInterests }>
-            <img src={ require('../images/' + openInterest.image + '.jpg' ) } class="w3-round w3-image" alt={ openInterest.alt } style={{ width: "200px", height: "auto", objectFit: "contain", padding: "1em" }} />
+            <img src={ require('../images/' + openInterest.image + '.jpg' ) } alt={ openInterest.alt } style={{ width: "200px", height: "auto", objectFit: "contain", padding: "1em" }} />
             <div className={ stylesHome.text }>
               <h4>{ openInterest.brief }</h4>
               <div dangerouslySetInnerHTML={ { __html: openInterest.content } }/>
