@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../SCSS/Main.module.scss';
+import stylesTheme from '../SCSS/App.scss';
 import { HomePageSections } from './Constants';
 
 export default class Header extends Component{
@@ -74,7 +75,7 @@ export default class Header extends Component{
     return(
       <WidthHandleLayout>
         <div className={ styles.bar }>
-          <div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i className="fa fa-home" /><div className={ styles.iconText }> HOME</div></div>
+          <div style={{ width: "8em", textAlign: "right"}}><div className={ styles.barItem } onClick={ () => this.handleOnClick( 'home' ) }><i className="fa fa-home" /><div className={ styles.iconText }> HOME</div></div></div>
           <div style={{flex: 1}} />
           <ProjectNav toggleProjectOpen={ () => this.setState({ projectOpen: !this.state.projectOpen })} history={ this.props.history } projectList={ this.state.projectList } i={ this.state.i } first={ first } last={ last } />
           <div style={{flex: 1}} />
@@ -119,11 +120,14 @@ class HomePageSectionsComponent extends Component {
 
 class ThemeToggle extends Component {
   render(){
-    if ( this.props.theme === "default" )
-      return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "dark" })}><i className="fa fa-moon" />
-        <div className={ styles.iconText }> DARK</div></div> )
-    return( <div className={ styles.barItem } onClick={ () => this.props.setState({ theme: "default" })}><i className="fa fa-sun" />
-      <div className={ styles.iconText }> DEFAULT</div></div> )
+    return( 
+      <div style={{ width: "8em", textAlign: "right"}}>
+        { this.props.theme === "default"
+          ? <div className={ styles.barItem } style={{ float: "right" }} onClick={ () => this.props.setState({ theme: "dark" })}><i className="fa fa-moon" /><div className={ styles.iconText }> DARK</div></div>
+          : <div className={ styles.barItem } style={{ float: "right" }} onClick={ () => this.props.setState({ theme: "default" })}><i className="fa fa-sun" /><div className={ styles.iconText }> DEFAULT</div></div>
+        }
+      </div>
+    )
   }
 }
 
