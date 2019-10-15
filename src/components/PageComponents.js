@@ -115,7 +115,7 @@ export class TableComponent extends Component {
 			</Row></h4>
 			<div style={ this.state.up ? { display: "flex", flexDirection: "column" } : { display: "flex", flexDirection: "column-reverse" } }>
 			{ source.list.map( ( item, i ) =>
-				<Row key={ i } className={ styles.listItem }>
+				<Row key={ i } className={ `${ styles.listItem } listItem` }>
 					<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
 					<Col md={ 10 } className={ styles.right }>
 						{ item.right.map( ( point, j ) =>
