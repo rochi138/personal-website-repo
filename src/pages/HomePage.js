@@ -52,27 +52,27 @@ export default class Home extends Component{
           </div>
           <AboutSection text={ source.aboutMe.text } />
           <SYDESection text={ source.SYDE.text } />
-          <div className={ `${ stylesHome.parallax } ${ stylesHome.projectsPic }` } >
-            <div className={ stylesHome.displayMiddle }>
-              <span className={ stylesHome.sectionName } >PROJECTS</span>
-            </div>
-          </div>
+          <PictureParallax title="projects" />
           <ProjectSection source={ source } history={ this.props.history } />
-          <div className={ `${ stylesHome.parallax } ${ stylesHome.contactPic }` }>
-            <div className={ stylesHome.displayMiddle }>
-              <span className={ stylesHome.sectionName } >CONTACT</span>
-            </div>
-          </div>
+          <PictureParallax title="contact" />
           <ContactSection />
-          <div className={ `${ stylesHome.parallax } ${ stylesHome.interestsPic }` }>
-            <div className={ stylesHome.displayMiddle }>
-              <span className={ stylesHome.sectionName } >INTERESTS</span>
-            </div>
-          </div>
+          <PictureParallax title="interests" />
           <InterestsSection interests={ source.interests } />
         </div>
       </MainLayout>
     );
+  }
+}
+
+class PictureParallax extends Component {
+  render(){
+    return(
+      <div className={ `${ stylesHome.parallax } ${ stylesHome[ this.props.title.trim().toLowerCase() + "Pic" ] }` }>
+        <div className={ stylesHome.displayMiddle }>
+          <span className={ stylesHome.sectionName } >{ this.props.title.toUpperCase() }</span>
+        </div>
+      </div>
+    )
   }
 }
 
