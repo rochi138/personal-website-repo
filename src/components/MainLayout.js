@@ -22,12 +22,8 @@ export class MainLayout extends Component{
         <div className="app-container">
           <Header {...this.props} />
           { React.Children.map( this.props.children, child =>
-              React.cloneElement( child ),
-            )
-          }
-          <div className={ styles.toTop } onClick={ () => this.handleTop() }>
-            <i className="fas fa-angle-double-up" />
-          </div>
+              React.cloneElement( child ),)}
+          <div className={ styles.toTop } onClick={ () => this.handleTop() }><i className="fas fa-angle-double-up" /></div>
           <Footer {...this.props} />
         </div>
       </div>

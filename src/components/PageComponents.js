@@ -108,27 +108,23 @@ export class TableComponent extends Component {
 	        <h2><div className={ styles.title }>
 	          { source.title }
 	        </div></h2>
-	        { source.link &&
-	          <div className={ styles.link }>
-	            <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a>
-	          </div>
-	        }
-		      <h4><Row className={ styles.header }>
-			  	<Col md={ 2 } onClick={ () => this.setState({ up: !this.state.up })}>{ source.leftTitle } <i class={ this.state.up ? "fa fa-sort-up" : "fa fa-sort-down" } style={ this.state.up ? { transform: "translateY(25%)" } : { transform: "translateY(-25%)" } } /></Col>
-				<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
-			  </Row></h4>
-			  <div style={ this.state.up ? { display: "flex", flexDirection: "column" } : { display: "flex", flexDirection: "column-reverse" } }>
-			  { source.list.map( ( item, i ) =>
-	          <Row key={ i } className={ styles.listItem }>
-		        	<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
-		        	<Col md={ 10 } className={ styles.right }>
-		        		{ item.right.map( ( point, j ) =>
-				          <div dangerouslySetInnerHTML={ { __html: point } } key={ j }/>
-						    ) }
-			    		</Col>
-	        	</Row>
-				) }
-				</div>
+	        { source.link && <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a> }
+			<h4><Row>
+			<Col md={ 2 } onClick={ () => this.setState({ up: !this.state.up })}>{ source.leftTitle } <i class={ this.state.up ? "fa fa-sort-up" : "fa fa-sort-down" } style={ this.state.up ? { transform: "translateY(25%)" } : { transform: "translateY(-25%)" } } /></Col>
+			<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
+			</Row></h4>
+			<div style={ this.state.up ? { display: "flex", flexDirection: "column" } : { display: "flex", flexDirection: "column-reverse" } }>
+			{ source.list.map( ( item, i ) =>
+				<Row key={ i } className={ styles.listItem }>
+					<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
+					<Col md={ 10 } className={ styles.right }>
+						{ item.right.map( ( point, j ) =>
+							<div dangerouslySetInnerHTML={ { __html: point } } key={ j }/>
+							) }
+						</Col>
+				</Row>
+			) }
+			</div>
 	      </div>
 	    </div>
     </div>
@@ -143,14 +139,14 @@ export class ListComponent extends Component {
     <div style={{ marginTop: "3em", display: "block", overflow: "auto", overflowWrap: "break-word" }}>
 	    <div className={ styles.listComponent }>
 		    <div className={ styles.main }>
-	        <h2><div className={ styles.title }>
-	          { source.title }
-	        </div></h2>
-	        <ul>
-				    { source.list.map( ( point, i ) =>
-			        <li key={ i } dangerouslySetInnerHTML={ { __html: point } } />
-			     	) }
-		     	</ul>
+				<h2><div className={ styles.title }>
+					{ source.title }
+				</div></h2>
+				<ul>
+					{ source.list.map( ( point, i ) =>
+						<li key={ i } dangerouslySetInnerHTML={ { __html: point } } />
+					) }
+				</ul>
 		    </div>
 	    </div>
     </div>

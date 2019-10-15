@@ -35,9 +35,9 @@ export default class ProjectPage extends Component{
       <MainLayout {...this.props} >
         <div className={ styles.siteWrapper }>
           { pageMeta.components.map( ( component, i ) =>
-            <div key = { i }>
+            <React.Fragment>
               { this.componentRender( component ) }
-            </div>
+            </React.Fragment>
           ) }
         </div>
       </MainLayout>
