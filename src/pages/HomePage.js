@@ -39,26 +39,21 @@ export default class Home extends Component{
 
   render(){
     var source = this.state.source;
-
-    //Animations are missing
-    //Can use modal (from previous versions) in project pages
     return(
       <MainLayout isHome={ true } {...this.props } >
-        <div id="home">
-          <div className={ `${ stylesHome.parallax } ${ stylesHome.bannerPic }` } >
-            <div className={ stylesHome.displayMiddle } >
-              <div className={ stylesHome.name } >ROBYN CHING</div> 
-            </div>
+        <div className={ `${ stylesHome.parallax } ${ stylesHome.bannerPic }` }  id="home" >
+          <div className={ stylesHome.displayMiddle } >
+            <div className={ stylesHome.name } >ROBYN CHING</div> 
           </div>
-          <AboutSection text={ source.aboutMe.text } />
-          <SYDESection text={ source.SYDE.text } />
-          <PictureParallax title="projects" />
-          <ProjectSection source={ source } history={ this.props.history } />
-          <PictureParallax title="contact" />
-          <ContactSection />
-          <PictureParallax title="interests" />
-          <InterestsSection interests={ source.interests } />
         </div>
+        <AboutSection text={ source.aboutMe.text } />
+        <SYDESection text={ source.SYDE.text } />
+        <PictureParallax title="projects" />
+        <ProjectSection source={ source } history={ this.props.history } />
+        <PictureParallax title="contact" />
+        <ContactSection />
+        <PictureParallax title="interests" />
+        <InterestsSection interests={ source.interests } />
       </MainLayout>
     );
   }
@@ -139,7 +134,7 @@ class ProjectSection extends Component {
           ) }
         </Row>
         { source.projectsMore && 
-          <Button onClick={ () => this.readMore("Projects") } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
+          <Button onClick={ () => this.setState({show: !this.state.show }) } style={{ backgroundColor: "#ccc", border: "none", color: "black" }}>
             { show ? "Show Less" : "Load More"}
           </Button>
         }
