@@ -2,7 +2,8 @@ export const ProjectList= [
     "Peekapak",
     "Website",
     "HireMePwease",
-    "FowlPlay"
+    "FowlPlay",
+    "TingeCringe"
 ]
 
 export const HomePageSections= [
