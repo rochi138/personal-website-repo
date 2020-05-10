@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "0b6db91cc3f0db2f483eb1f86bb7d61b",
-    "url": "/personal-website-repo/static/media/hiremepwease-loading.0b6db91c.jpg"
+    "revision": "17fcd6c0a63004c938ee",
+    "url": "/personal-website-repo/static/css/main.f36675a3.chunk.css"
   },
   {
-    "revision": "2ba6d03f18a35a3192e8",
-    "url": "/personal-website-repo/static/css/main.21db0f30.chunk.css"
+    "revision": "17fcd6c0a63004c938ee",
+    "url": "/personal-website-repo/static/js/main.f7df70a5.chunk.js"
   },
   {
     "revision": "75b2dd13e1fd4f8f4b73",
     "url": "/personal-website-repo/static/js/runtime~main.d676354c.js"
   },
   {
-    "revision": "335b04d2c3d85998263aa4b3aeb03b8e",
-    "url": "/personal-website-repo/static/media/robynProfile2.335b04d2.JPG"
+    "revision": "9ab8c25904bb11f875fd",
+    "url": "/personal-website-repo/static/css/2.9066c994.chunk.css"
   },
   {
-    "revision": "ae015629f52882b021a9",
-    "url": "/personal-website-repo/static/js/2.9b968e95.chunk.js"
+    "revision": "9ab8c25904bb11f875fd",
+    "url": "/personal-website-repo/static/js/2.1a5bbb6f.chunk.js"
   },
   {
     "revision": "53e40081c783d1e71bc05f1d752288fe",
@@ -76,8 +76,8 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/hiremepwease-award.25d555c4.jpg"
   },
   {
-    "revision": "2ba6d03f18a35a3192e8",
-    "url": "/personal-website-repo/static/js/main.32427d87.chunk.js"
+    "revision": "0b6db91cc3f0db2f483eb1f86bb7d61b",
+    "url": "/personal-website-repo/static/media/hiremepwease-loading.0b6db91c.jpg"
   },
   {
     "revision": "6aa7d783f97693de67bb899eb8efa619",
@@ -144,11 +144,39 @@ self.__precacheManifest = [
     "url": "/personal-website-repo/static/media/screenshot-website-json.e60fd506.jpg"
   },
   {
-    "revision": "ae015629f52882b021a9",
-    "url": "/personal-website-repo/static/css/2.f9d3549d.chunk.css"
+    "revision": "dd024fe9c5549b16dab05e26050d8ba9",
+    "url": "/personal-website-repo/static/media/tingecringe-mobile-1.dd024fe9.jpg"
   },
   {
-    "revision": "18974212b856a6dd6159306ef82fdf6e",
+    "revision": "21d61564c223d5bb4097020a152b77d8",
+    "url": "/personal-website-repo/static/media/tingecringe-mobile-2.21d61564.jpg"
+  },
+  {
+    "revision": "2f6450ab48399f9eea9c4c70f841cb53",
+    "url": "/personal-website-repo/static/media/tingecringe-mobile-3.2f6450ab.jpg"
+  },
+  {
+    "revision": "807451f26f8a00ee2d839467f6a2ae16",
+    "url": "/personal-website-repo/static/media/tingecringe-mobile-4.807451f2.jpg"
+  },
+  {
+    "revision": "7513920f62b5429b4886808b6a4c50e8",
+    "url": "/personal-website-repo/static/media/tingecringelogo.7513920f.jpg"
+  },
+  {
+    "revision": "335b04d2c3d85998263aa4b3aeb03b8e",
+    "url": "/personal-website-repo/static/media/robynProfile2.335b04d2.JPG"
+  },
+  {
+    "revision": "2928664fe1fc6aca88583a6f606d60ba",
+    "url": "/personal-website-repo/static/media/AppStoreBadge.2928664f.svg"
+  },
+  {
+    "revision": "d4947b471209eb0a89a325e3242c4ff3",
+    "url": "/personal-website-repo/static/media/PlayStoreBadge.d4947b47.png"
+  },
+  {
+    "revision": "e84744078d3cefffdbf58196168b1bb1",
     "url": "/personal-website-repo/index.html"
   }
 ];
