@@ -16,9 +16,9 @@ export class ProjectSummary extends Component {
 				{ ( source.appStore || source.playStore ) && 
 					<div className={ styles.badgeContainer }>
 						{ source.appStore && 
-							<a href={ source.appStore }><img alt='Download from the App Store' src={ require('../images/AppStoreBadge.svg' ) } height='65'/></a> }
+							<a href={ source.appStore } target="_blank" rel="noopener noreferrer"><img alt='Download from the App Store' src={ require('../images/AppStoreBadge.svg' ) } height='65'/></a> }
 						{ source.playStore && 
-							<a href={ source.playStore }><img alt='Get it on Google Play' src={ require('../images/PlayStoreBadge.png' ) } height='65'/></a> }
+							<a href={ source.playStore } target="_blank" rel="noopener noreferrer"><img alt='Get it on Google Play' src={ require('../images/PlayStoreBadge.png' ) } height='65'/></a> }
 					</div> }
 				<div className={ styles.summary } dangerouslySetInnerHTML={ { __html: source.summary } } />
 			</div>
