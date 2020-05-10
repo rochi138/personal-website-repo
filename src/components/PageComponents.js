@@ -13,6 +13,13 @@ export class ProjectSummary extends Component {
 				<h4>{ source.type }</h4>
 				{ source.link && 
 					<a href={ source.link }><button className="btn btn-primary">Test out project!</button></a> }
+				{ ( source.appStore || source.playStore ) && 
+					<div className={ styles.badgeContainer }>
+						{ source.appStore && 
+							<a href={ source.appStore }><img alt='Download from the App Store' src={ require('../images/AppStoreBadge.svg' ) } height='65'/></a> }
+						{ source.playStore && 
+							<a href={ source.playStore }><img alt='Get it on Google Play' src={ require('../images/PlayStoreBadge.png' ) } height='65'/></a> }
+					</div> }
 				<div className={ styles.summary } dangerouslySetInnerHTML={ { __html: source.summary } } />
 			</div>
 		)

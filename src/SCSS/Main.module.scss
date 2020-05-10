@@ -103,6 +103,19 @@
 		text-align: left;
 		margin-top: 1em;
 	}
+
+	.badgesContainer {
+		display: flex; 
+		justify-content: center;
+
+		.mobile {
+			flex-direction: column;
+		}
+
+		.desktop {
+			flex-direction: row;
+		}
+	}
 }
 
 .awardsComponent {

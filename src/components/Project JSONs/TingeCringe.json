@@ -11,6 +11,8 @@
         "projectName": "Tinge Cringe",
         "tagline": "Find the tinge or get ready to cringe!",
         "type": "Game Dev Co-op",
+        "appStore": "https://apps.apple.com/us/app/tinge-cringe/id1510033949",
+        "playStore": "https://play.google.com/store/apps/details?id=ca.zemind.tingecringe",
         "image": {
           "src": "tingecringelogo", 
           "alt": "Tinge Cringe Logo"
