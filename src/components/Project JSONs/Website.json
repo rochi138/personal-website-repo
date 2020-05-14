@@ -1,4 +1,10 @@
 {
+  "thumbnail": {
+    "image": "react-js",
+    "alt": "React JS Logo",
+    "name": "personal-website-repo",
+    "description": "Personal Website"
+  },
   "components": [
     {
       "componentName": "ProjectSummary",
@@ -48,42 +54,38 @@
       "rightTitle": "Update Description",
       "list": [
       {
-        "left": "03/01/2018", 
+        "left": "2019/09/28", 
         "right": [
-          "ReactJS App hosted by GitHub",
-          "Draws information from JSON files",
-          "Image modal slideshow",
-          "Project pages derive from a single template, based on JSON files."
+          "<b>Automated Project Addition:</b>",
+          "<ul><li>Draws project names from array in Constants.js and automatically generates URLs</li><li>Sorts projects by latest update date and displays them in that order.</li><li>Allows slideshow navigation through projects</li></ul>",
+          "Completely redesigned desktop and mobile header",
+          "<ul><li><b>Project Slideshow:</b> (go left and right through all projects)</li><li>Overall better navigation</li></ul>",
+          "Enabled dark mode",
+          "Added Fontawesome icons"
         ]
       },
       {
-        "left": "26/11/2018", 
-        "right": [
-          "Complete overhaul of website begins."
-        ]
-      },
-      {
-        "left": "07/05/2018", 
-        "right": [
-          "Site was created for co-op applications.",
-          "Copied <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Parallex Template</a> from <a href=\"https://www.w3schools.com/\" target=\"_blank\" rel=\"noopener noreferrer\">W3Schools</a>.",
-          "Due to lack of experience in HTML, CSS and JavaScript, site was left in a half-finished, unpresentable state."
-        ]
-      },
-      {
-        "left": "Approximately November 2018", 
-        "right": [
-          "Complete overhaul of website begins",
-          "Due to newly gained experience and a better overall idea, website will be revamped to include new features, updated information and better software maintainability"
-        ]
-      },
-      {
-        "left": "15/01/2019", 
+        "left": "2019/01/15", 
         "right": [
           "Complete overhaul of website complete",
           "Website is in a presentable and stable state. More features will be added in the future (see Future Features)",
           "Added features:",
-          "<ul><li><b>React App:</b> website is no longer pure hard-coded HTML and has multiple pages</li><li><b>Mobile view:</b> website has a decent (or at least passable) layout on mobile devices; check out homepage Interests</li><li><b>JSON Storage:</b> project pages are procedurally generated from JSON files</li><li><b>Slideshow:</b> images on individual project pages can be viewed with a slideshow modal</li><li><b>Opacity:</b> homepage projects, hompage interests and project page images will all change opacity when hovered</li><li><b>SCSS:</b> converted all CSS to SCSS for maintainability</li><li><b>Information:</b> updated images, 'About Me', resume, 'Projects', and 'Interests'</li><li>Removed any old and non-functional features from old version</li></ul>"
+          "<ul><li><b>React App:</b> website is no longer pure hard-coded HTML and has multiple pages</li><li><b>Mobile view:</b> website has a decent (or at least passable) layout on mobile devices; check out homepage Interests</li><li><b>Page Templating:</b> project pages are all generated based on one template</li><li><b>JSON Storage:</b> project pages are procedurally generated from JSON files</li><li><b>Slideshow:</b> images on individual project pages can be viewed with a slideshow modal</li><li><b>Opacity:</b> homepage projects, hompage interests and project page images will all change opacity when hovered</li><li><b>SCSS:</b> converted all CSS to SCSS for maintainability</li><li><b>Information:</b> updated images, 'About Me', resume, 'Projects', and 'Interests'</li><li>Removed any old and non-functional features from old version</li></ul>"
+        ]
+      },
+      {
+        "left": "2018/11/26", 
+        "right": [
+          "Complete overhaul of website begins.",
+          "Due to newly gained experience and a better overall idea, website will be revamped to include new features, updated information and better software maintainability"
+        ]
+      },
+      {
+        "left": "2018/05/07", 
+        "right": [
+          "Site was created for co-op applications.",
+          "Copied <a href=\"https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Parallex Template</a> from <a href=\"https://www.w3schools.com/\" target=\"_blank\" rel=\"noopener noreferrer\">W3Schools</a>.",
+          "Due to lack of experience in HTML, CSS and JavaScript, site was left in a half-finished, unpresentable state."
         ]
       }
     ]
@@ -97,16 +99,21 @@
         { 
           "left": "Robyn Ching",
           "right": [
+            "User Interface",
             "React.js",
-            "Bootstrap",
-            "SCSS",
-            "HTML"
+            "SCSS"
           ]
         },
         { 
-          "left": "Amy Lu",
+          "left": "<a href=\"https://mensshi.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Amy Lu</a>",
           "right": [
             "Art assets for the FowlPlay."
+          ]
+        },
+        { 
+          "left": "<a href=\"https://silvree.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Silvia George</a>",
+          "right": [
+            "Web design consultations."
           ]
         },
         { 
@@ -129,7 +136,7 @@
       "componentName": "ListComponent",
       "title": "Key Takeaways",
       "list": [
-        "Basic knowledge of HTML, JavaScript and CSS.",
+        "Knowledge of ReactJS and SCSS.",
         "Basic project and feature planning.",
         "Understanding user-readability and experience"
       ]
@@ -138,11 +145,8 @@
       "componentName": "ListComponent",
       "title": "Future Features",
       "list": [
-        "HTML<ul><li>Spinner</li><li>Default fonts</li><li>Font Awesome Icons</li></ul>",
+        "HTML<ul><li>Spinner</li><li>Default fonts</li></ul>",
         "Enable e-mailing ability",
-        "Templating<ul><li>Dark mode</li></ul>",
-        "Project arrows (go left and right through all projects)",
-        "Draws all files and sorts them by latest update date. Displays them in that order.",
         "JSON Editor<ul><li>use draft-js</li><li>can create new JSON file</li><li>can load current JSON file</li><li>can edit current JSON file</li><li>can save edited JSON file</li><li>can use calendar import to fill in dates</li></ul>"
       ]
     },

@@ -7,10 +7,19 @@ export class ProjectSummary extends Component {
 		const source = this.props.source;
 		return (
 			<div className={ styles.projectSummary }>
-				<img src={ require('../images/' + source.image.src + '.jpg' ) } class="w3-round w3-image" alt={ source.image.alt } style={{objectFit: "contain", maxWidth: "400px", maxHeight: "500px" }} width="80%" height="80%" />
+				<img src={ require('../images/' + source.image.src + '.jpg' ) } alt={ source.image.alt } style={{objectFit: "contain", maxWidth: "400px", maxHeight: "500px" }} width="80%" height="80%" />
 				<h1>{ source.projectName }</h1>
 				<h3>{ source.tagline }</h3>
 				<h4>{ source.type }</h4>
+				{ source.link && 
+					<a href={ source.link }><button className="btn btn-primary">Test out project!</button></a> }
+				{ ( source.appStore || source.playStore ) && 
+					<div className={ styles.badgeContainer }>
+						{ source.appStore && 
+							<a href={ source.appStore } target="_blank" rel="noopener noreferrer"><img alt='Download from the App Store' src={ require('../images/AppStoreBadge.svg' ) } height='65'/></a> }
+						{ source.playStore && 
+							<a href={ source.playStore } target="_blank" rel="noopener noreferrer"><img alt='Get it on Google Play' src={ require('../images/PlayStoreBadge.png' ) } height='65'/></a> }
+					</div> }
 				<div className={ styles.summary } dangerouslySetInnerHTML={ { __html: source.summary } } />
 			</div>
 		)
@@ -90,6 +99,13 @@ export class SlideshowComponent extends Component {
 }
 
 export class TableComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state={
+			up: true
+		}
+	}
+
   render(){
   	const source = this.props.source;
     return(
@@ -99,25 +115,23 @@ export class TableComponent extends Component {
 	        <h2><div className={ styles.title }>
 	          { source.title }
 	        </div></h2>
-	        { source.link &&
-	          <div className={ styles.link }>
-	            <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a>
-	          </div>
-	        }
-		      <h4><Row classname={ styles.header }>
-	          <Col md={ 2 }>{ source.leftTitle }</Col>
-				  	<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
-				  </Row></h4>
-				  { source.list.map( ( item, i ) =>
-	          <Row key={ i } className={ styles.listItem }>
-		        	<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
-		        	<Col md={ 10 } className={ styles.right }>
-		        		{ item.right.map( ( point, j ) =>
-				          <div dangerouslySetInnerHTML={ { __html: point } } key={ j }/>
-						    ) }
-			    		</Col>
-	        	</Row>
-			    ) }
+	        { source.link && <a href={ source.link } target='_blank' rel='noopener noreferrer' >GitHub Repository</a> }
+			<h4><Row>
+			<Col md={ 2 } onClick={ () => this.setState({ up: !this.state.up })}>{ source.leftTitle } <i class={ this.state.up ? "fa fa-sort-up" : "fa fa-sort-down" } style={ this.state.up ? { transform: "translateY(25%)" } : { transform: "translateY(-25%)" } } /></Col>
+			<Col md={ 10 } className={ styles.rightTitle }>{ source.rightTitle }</Col>
+			</Row></h4>
+			<div style={ this.state.up ? { display: "flex", flexDirection: "column" } : { display: "flex", flexDirection: "column-reverse" } }>
+			{ source.list.map( ( item, i ) =>
+				<Row key={ i } className={ `${ styles.listItem } listItem` }>
+					<Col md={ 2 } className={ styles.left } dangerouslySetInnerHTML={ { __html: item.left } } />
+					<Col md={ 10 } className={ styles.right }>
+						{ item.right.map( ( point, j ) =>
+							<div dangerouslySetInnerHTML={ { __html: point } } key={ j }/>
+							) }
+						</Col>
+				</Row>
+			) }
+			</div>
 	      </div>
 	    </div>
     </div>
@@ -132,14 +146,14 @@ export class ListComponent extends Component {
     <div style={{ marginTop: "3em", display: "block", overflow: "auto", overflowWrap: "break-word" }}>
 	    <div className={ styles.listComponent }>
 		    <div className={ styles.main }>
-	        <h2><div className={ styles.title }>
-	          { source.title }
-	        </div></h2>
-	        <ul>
-				    { source.list.map( ( point, i ) =>
-			        <li key={ i } dangerouslySetInnerHTML={ { __html: point } } />
-			     	) }
-		     	</ul>
+				<h2><div className={ styles.title }>
+					{ source.title }
+				</div></h2>
+				<ul>
+					{ source.list.map( ( point, i ) =>
+						<li key={ i } dangerouslySetInnerHTML={ { __html: point } } />
+					) }
+				</ul>
 		    </div>
 	    </div>
     </div>

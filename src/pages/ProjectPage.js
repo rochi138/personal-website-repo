@@ -16,7 +16,7 @@ export default class ProjectPage extends Component{
     super( props );
 
     this.state ={
-      pageMeta: require('../pages/' + this.props.fileName + '.json')
+      pageMeta: require('../components/Project JSONs/' + this.props.fileName + '.json')
     }
   }
 
@@ -35,9 +35,9 @@ export default class ProjectPage extends Component{
       <MainLayout {...this.props} >
         <div className={ styles.siteWrapper }>
           { pageMeta.components.map( ( component, i ) =>
-            <div key = { i }>
+            <React.Fragment>
               { this.componentRender( component ) }
-            </div>
+            </React.Fragment>
           ) }
         </div>
       </MainLayout>
