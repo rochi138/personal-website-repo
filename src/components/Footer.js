@@ -7,8 +7,8 @@ export default class Footer extends Component{
     	<footer className={ styles.footer }>
         Robyn Ching
         <div style={{ display: "flex" }}>
-          <a href="https://github.com/rochi138"><i className="fab fa-github" /></a><br />
-          <a href="https://www.linkedin.com/in/robyn-c-18694b148/"><i className="fab fa-linkedin" /></a>
+          <a href="https://github.com/rochi138" target="_blank" rel="noopener noreferrer"><i className="fab fa-github" /></a><br />
+          <a href="https://www.linkedin.com/in/robyn-ching/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin" /></a>
         </div>
       </footer>
     	)
